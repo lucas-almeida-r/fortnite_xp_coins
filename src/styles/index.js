@@ -6,18 +6,15 @@ import { moderateScale } from '../utils/scaling';
 // COLORS
 //
 
-export const COLOR_FILTER_BUTTON = '#fff';
-export const COLOR_ON_FILTER_BUTTON = '#000';
-
-export const COLOR_FILTER_ITEM = '#fff';
-export const COLOR_ON_FILTER_ITEM = '#000';
-
-export const COLOR_FILTER_ITEM_BORDER = '#ddd';
-
-export const COLOR_FILTER_HEADER = '#67abeb';
-export const COLOR_ON_FILTER_HEADER = '#000';
-
-export const COLOR_MODAL_BACKGROUND = 'rgba(0, 0, 0, 0.75)';
+export const Colors = {
+  SURFACE: '#fff',
+  ON_SURFACE: '#000',
+  HEADER : '#67abeb',
+  ON_HEADER: '#000',
+  BORDER: '#ddd',
+  MODAL_BACKGROUND: 'rgba(0, 0, 0, 0.75)',
+  //BACKGROUND: '#fff', // not used yet
+};
 
 //
 // TEXTS
@@ -26,41 +23,28 @@ export const COLOR_MODAL_BACKGROUND = 'rgba(0, 0, 0, 0.75)';
 // fontes disponíveis no React-Native
 // este link (aberto em um IOS) https://iosfonts.com mostra comos são as fontes
 
-export const TEXT_TITLE_FONT_SIZE = moderateScale(16);
-export const TEXT_TITLE_COLOR = '#000';
-export const TEXT_TITLE_FONT_FAMILY = Platform.OS === 'android' ? 'Roboto' : 'AppeSDGothicNeo-Regular';
-export const TEXT_TITLE_STYLE = {
-  fontSize: TEXT_TITLE_FONT_SIZE,
-  color: TEXT_TITLE_COLOR,
-  fontFamily: TEXT_TITLE_FONT_FAMILY
-};
-
-export const TEXT_SUBTITLE_FONT_SIZE = moderateScale(14);
-export const TEXT_SUBTITLE_COLOR = '#000';
-export const TEXT_SUBTITLE_FONT_FAMILY = Platform.OS === 'android' ? 'Roboto' : 'AppeSDGothicNeo-Regular';
-export const TEXT_SUBTITLE_STYLE = {
-  fontSize: TEXT_SUBTITLE_FONT_SIZE,
-  color: TEXT_SUBTITLE_COLOR,
-  fontFamily: TEXT_SUBTITLE_FONT_FAMILY
-};
-
-export const TEXT_BODY_FONT_SIZE = moderateScale(12);
-export const TEXT_BODY_COLOR = '#000';
-export const TEXT_BODY_FONT_FAMILY = Platform.OS === 'android' ? 'Roboto' : 'AppeSDGothicNeo-Regular';
-export const TEXT_BODY_STYLE = {
-  fontSize: TEXT_BODY_FONT_SIZE,
-  color: TEXT_BODY_COLOR,
-  fontFamily: TEXT_BODY_FONT_FAMILY
+export const Typography = {
+  HEADER: {
+    fontSize:  moderateScale(14),
+    color: Colors.ON_HEADER,
+    fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Helvetica',
+  },
+  BASE: {
+    fontSize:  moderateScale(12),
+    color: Colors.ON_SURFACE,
+    fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Helvetica',
+  },
+  // SMALL: ... // not used yet
 };
 
 //
 // DIMENSIONS
 //
 
-export const DIMEN_SPACING = moderateScale(15);
+export const Sizes = {
+  BASE_SPACING: moderateScale(10),
+  ICON: moderateScale(20),
+  BORDER_RADIUS: moderateScale(5),
+  //BUTTON_HEIGHT: moderateScale(45),
+};
 
-export const DIMEN_BUTTON_HEIGHT = moderateScale(45);
-
-export const DIMEN_BORDER_RADIUS = moderateScale(5);
-
-export const DIMEN_CHECKBOX = moderateScale(20);

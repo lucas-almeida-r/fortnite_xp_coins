@@ -2,8 +2,7 @@
 import React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 
-import { COLOR_FILTER_HEADER, DIMEN_BORDER_RADIUS, DIMEN_BUTTON_HEIGHT, DIMEN_SPACING,
-  TEXT_SUBTITLE_STYLE  } from "../styles";
+import { Colors, Typography, Sizes  } from "../styles";
 import { screenWidth } from '../utils/scaling';
 
 
@@ -28,14 +27,13 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: DIMEN_BUTTON_HEIGHT,
-    paddingHorizontal: DIMEN_SPACING,
-    borderRadius: DIMEN_BORDER_RADIUS,
-    backgroundColor: COLOR_FILTER_HEADER,
-    width: (screenWidth - 4*DIMEN_SPACING) / 3
+    padding: Sizes.BASE_SPACING,
+    borderRadius: 100, // high value to fully round the sides of the button
+    backgroundColor: Colors.HEADER,
+    width: (screenWidth - 4*Sizes.BASE_SPACING) / 3
   },
   title: {
-    ...TEXT_SUBTITLE_STYLE
+    ...Typography.BASE
   }
 });
 

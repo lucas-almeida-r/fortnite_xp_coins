@@ -4,8 +4,7 @@ import FilterItem from './FilterItem';
 import FilterButton from './FilterButton';
 import { shortDimension } from '../utils/scaling';
 
-import { COLOR_MODAL_BACKGROUND, COLOR_FILTER_ITEM, 
-  DIMEN_BORDER_RADIUS } from '../styles';
+import { Colors, Sizes } from '../styles';
 
 
 const Filter = ({ }) => {
@@ -67,13 +66,13 @@ const Filter = ({ }) => {
 const styles = StyleSheet.create({
   modalContainer: {
     flex: 1,
-    backgroundColor: COLOR_MODAL_BACKGROUND,
+    backgroundColor: Colors.MODAL_BACKGROUND,
     alignItems: 'center',
     justifyContent: 'center',
   },
   modalSurface: {
-    backgroundColor: COLOR_FILTER_ITEM,
-    borderRadius: DIMEN_BORDER_RADIUS,
+    backgroundColor: Colors.SURFACE,
+    borderRadius: Sizes.BORDER_RADIUS,
     width: shortDimension * 0.70,
   },
 });
