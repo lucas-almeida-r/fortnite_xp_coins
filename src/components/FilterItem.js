@@ -11,15 +11,15 @@
 // onPressIcon: function called when the user clicks on the icon
 //
 
-
 import React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Feather } from "@expo/vector-icons";
 
-import { DIMEN_BUTTON_HEIGHT, DIMEN_SPACING, 
+import { DIMEN_BUTTON_HEIGHT, DIMEN_SPACING, DIMEN_CHECKBOX,
   COLOR_FILTER_ITEM_BORDER, TEXT_SUBTITLE_STYLE, 
   COLOR_FILTER_ITEM, DIMEN_BORDER_RADIUS, 
   COLOR_FILTER_HEADER, TEXT_TITLE_STYLE } from "../styles";
+
 
 const FilterItem = ({ title, checked, header, last, onPress, onPressIcon}) => {
 
@@ -40,7 +40,7 @@ const FilterItem = ({ title, checked, header, last, onPress, onPressIcon}) => {
         <Text style={textStyle}>{title}</Text>
 
         <TouchableOpacity onPress={onPressIcon}>
-          <Feather title={checked ? 'check-square' : 'square'} size={20} />
+          <Feather name={checked ? 'check-square' : 'square'} size={DIMEN_CHECKBOX} />
         </TouchableOpacity>
 
       </View>

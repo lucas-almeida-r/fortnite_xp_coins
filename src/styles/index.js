@@ -62,3 +62,5 @@ export const DIMEN_SPACING = moderateScale(15);
 export const DIMEN_BUTTON_HEIGHT = moderateScale(45);
 
 export const DIMEN_BORDER_RADIUS = moderateScale(5);
+
+export const DIMEN_CHECKBOX = moderateScale(20);
