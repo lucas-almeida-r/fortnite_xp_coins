@@ -23,7 +23,7 @@ const MapScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   screenContainer: {
     flex: 1,
-    backgroundColor: Colors.MAP_BACKGROUND,
+    backgroundColor: Colors.BACKGROUND,
     flexDirection: 'column',
     justifyContent: 'space-between',
   },

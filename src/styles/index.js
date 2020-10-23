@@ -13,8 +13,7 @@ export const Colors = {
   ON_HEADER: '#000',
   BORDER: '#ddd',
   MODAL_BACKGROUND: 'rgba(0, 0, 0, 0.75)',
-  MAP_BACKGROUND: '#000',
-  //BACKGROUND: '#fff', // not used yet
+  BACKGROUND: '#000',
 };
 
 //

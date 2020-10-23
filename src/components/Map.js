@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import { Text, View, StyleSheet, Image, Dimensions, Animated, PanResponder } from 'react-native';
-import ImageZoom from 'react-native-image-pan-zoom';
 
 import { Colors, Typography, Sizes  } from "../styles";
 import { screenWidth, shortDimension } from '../utils/scaling';
+import XpCoins from './XpCoins';
 
 
 const Map = () => {
@@ -43,6 +43,7 @@ const Map = () => {
         style={styles.map}
         source={require('../../assets/map.png')}
       />
+      <XpCoins/>
     </Animated.View>
   );
 }
