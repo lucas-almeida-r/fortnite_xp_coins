@@ -4,16 +4,13 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Filter from '../components/Filter';
 import { screenHeight, screenWidth } from '../utils/scaling';
 import { Sizes } from '../styles';
+import Map from '../components/Map';
 
 const MapScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.screenContainer}>
-      <View>
-        <Text style={{ fontSize: 30 }}>MapScreen</Text>
-        <Text>{screenHeight}</Text>
-        <Text>{screenWidth}</Text>
-      </View>
+      <Map/>
       <View style={styles.filtersContainer}>
           <Filter />
           <Filter />
