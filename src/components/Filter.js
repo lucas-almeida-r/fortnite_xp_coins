@@ -11,22 +11,22 @@ const Filter = ({ }) => {
   const [visibility, setVisibility] = useState(false);
 
   const data = [
-    { name: 'aaaa', checked: true },
-    { name: 'bbbb', checked: false },
-    { name: 'cccc', checked: true },
-    { name: 'dddd', checked: false }
+    { title: 'aaaa', checked: true },
+    { title: 'bbbb', checked: false },
+    { title: 'cccc', checked: true },
+    { title: 'dddd', checked: false }
   ];
   
   const renderHeader = () => {
     return (
-      <FilterItem name='header' header/>
+      <FilterItem title='header' header/>
     );
   };
   
   const renderItem = ({ item, index }) => {
     return (
       <FilterItem
-        name={item.name}
+        title={item.title}
         last={index === data.length-1}
       />
     );
@@ -51,7 +51,7 @@ const Filter = ({ }) => {
               <FlatList
                 renderItem={renderItem}
                 data={data}
-                keyExtractor={item => item.name}
+                keyExtractor={item => item.title}
               />
             </View>
           </View>
