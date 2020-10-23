@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, FlatList, Modal, TouchableWithoutFeedback, Button } from "react-native";
+import { View, StyleSheet, FlatList, Modal, TouchableWithoutFeedback } from "react-native";
 import FilterItem from './FilterItem';
+import FilterButton from './FilterButton';
 import { shortDimension } from '../utils/scaling';
 
 import { COLOR_MODAL_BACKGROUND, COLOR_FILTER_ITEM, 
@@ -34,9 +35,10 @@ const Filter = ({ }) => {
 
   return (
     <View>
-      <Button
+      <FilterButton
         title='titulo'
         onPress={() => setVisibility(true)}
+        buttonStyles={{ borderRadius: 10 }}
       />
       <Modal
         visible={visibility}
