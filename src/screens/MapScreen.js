@@ -3,7 +3,7 @@ import { Text, StyleSheet, Platform, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Filter from '../components/Filter';
 import { screenHeight, screenWidth } from '../utils/scaling';
-import { Sizes } from '../styles';
+import { Sizes, Colors } from '../styles';
 import Map from '../components/Map';
 
 const MapScreen = ({ navigation }) => {
@@ -23,7 +23,7 @@ const MapScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   screenContainer: {
     flex: 1,
-    backgroundColor: '#ddd',
+    backgroundColor: Colors.MAP_BACKGROUND,
     flexDirection: 'column',
     justifyContent: 'space-between',
   },
