@@ -1,3 +1,4 @@
+import { AsyncStorage } from 'react-native';
 import createDataContext from './createDataContext';
 
 // REDUCER
@@ -5,8 +6,7 @@ const mapReducer = (state, { type, payload }) => {
   let newState = { ...state };
   switch (type) {
     case 'set_filters':
-      payload.filters.forEach( f => newState.filters[f] = payload.newValue);
-      return newState;
+      return { ...state, filters: payload };
       
     case 'update_coin_status':
       newState.coinsStatus = newState.coinsStatus.map( c =>
@@ -15,7 +15,10 @@ const mapReducer = (state, { type, payload }) => {
           : c
       );
       return newState;
-      
+    
+    case 'get_cached_data':
+      return { ...state, filters: payload };
+
     default:
       return state;
   }
@@ -26,8 +29,12 @@ const mapReducer = (state, { type, payload }) => {
 
 // filters: array of filters to be updated
 // newValue: true or false
-const setFilters = dispatch => (filters, newValue) => {
-  dispatch({ type: 'set_filters', payload: { filters, newValue } });
+const setFilters = (dispatch, state) => async (updatedFilters, newValue) => {
+  let newFilters = { ...state.filters };
+  updatedFilters.forEach( f => newFilters[f] = newValue);
+  await AsyncStorage.setItem('filters', JSON.stringify(newFilters));
+  
+  dispatch({ type: 'set_filters', payload: newFilters });
 };
 
 // newStatus: 'collected' or 'notCollected'
@@ -35,12 +42,22 @@ const updateCoinStatus = dispatch => (id, newStatus) => {
   dispatch({ type: 'update_coin_status', payload: { id, newStatus} });
 };
 
+const getCachedData = dispatch => async () => {
+  const filters = await AsyncStorage.getItem('filters');
+  console.log(filters);
+  console.log(JSON.parse(filters));
+
+  if(filters) {
+    dispatch({ type: 'get_cached_data', payload: JSON.parse(filters) });
+  }
+};
 
 // EXPORT
 export const { Provider, Context } = createDataContext(
   mapReducer,
-  { setFilters, updateCoinStatus },
+  { setFilters, updateCoinStatus, getCachedData },
   { 
+    //isLoading: true,
     // downloaded from internet
     coins: [
       { id: '1', coords: { top: 0, left: 0 }, color: 'blue', week: 'week2' }, 
