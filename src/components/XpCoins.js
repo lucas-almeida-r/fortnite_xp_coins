@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { Text, View, StyleSheet, Image, FlatList } from 'react-native';
-//import { TouchableOpacity } from "react-native-gesture-handler";
 import { TouchableOpacity } from "react-native";
 import { Context as MapContext } from "../context/MapContext";
 
@@ -9,17 +8,18 @@ import { screenWidth, shortDimension } from '../utils/scaling';
 
 
 const XpCoins = () => {
-  const { state: { coins, coinsStatus, filters } } = useContext(MapContext);
+  const { state: { coins, coinsStatus, filters }, updateCoinStatus } = useContext(MapContext);
 
-  
-  const renderCoin = (item, index) => {
-    const status = coinsStatus.find( coin => coin.id === item.id).status;
+  const renderCoin = (coin, index) => {
+    const status = coinsStatus.find(c => {return c.id === coin.id;}).status;
+    const newStatusOnPress = status === 'collected' ? 'notCollected' : 'collected';
+
     return(
-      filters[item.color] && filters[item.week] && filters[status]
+      filters[coin.color] && filters[coin.week] && filters[status]
       ? (<TouchableOpacity 
-        style={[styles.container, { left: item.coords.left, top: item.coords.top }]} 
-        onPress={()=>console.log('normal')} 
-        key={item.id}
+        style={[styles.container, { left: coin.coords.left, top: coin.coords.top }]} 
+        onPress={()=> updateCoinStatus(coin.id, newStatusOnPress)}
+        key={coin.id}
         >
           <Image 
             style={styles.xpCoin}
