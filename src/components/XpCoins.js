@@ -1,36 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Text, View, StyleSheet, Image, FlatList } from 'react-native';
 //import { TouchableOpacity } from "react-native-gesture-handler";
 import { TouchableOpacity } from "react-native";
+import { Context as MapContext } from "../context/MapContext";
 
 import { Colors, Typography, Sizes  } from "../styles";
 import { screenWidth, shortDimension } from '../utils/scaling';
 
 
 const XpCoins = () => {
-  const data = [
-    { id: '1', coords: { top: 50, left: 50 }, color: 'blue', week: 2, collected: true }, 
-    { id: '2', coords: { top: 50, left: 20 }, color: 'green', week: 5, collected: false }, 
-    { id: '3', coords: { top: 200, left: 10 }, color: 'golden', week: 1, collected: true }
-  ];
+  const { state: { coins, filters } } = useContext(MapContext);
 
   const renderCoin = (item, index) => {
     return(
-        <TouchableOpacity 
+        filters[item.color] && filters[item.week] && filters[item.status]
+        ? (<TouchableOpacity 
           style={[styles.container, { left: item.coords.left, top: item.coords.top }]} 
           onPress={()=>console.log('normal')} 
           key={item.id}
-        >
-          <Image 
-            style={styles.xpCoin}
-            source={require('../../assets/green.png')}
-          />
-        </TouchableOpacity>
+          >
+            <Image 
+              style={styles.xpCoin}
+              source={require('../../assets/green.png')}
+            />
+          </TouchableOpacity>)
+        : null
     );
   };
   
 
-  return data.map(renderCoin);
+  return coins.map(renderCoin);
 }
 
 
