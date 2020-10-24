@@ -1,7 +1,7 @@
 //
 // FilterItem is a item of the list showed by Filter
 //
-// title:   It is the text displayed inside the FilterItem
+// label:   It is the text displayed inside the FilterItem
 // checked: If set to true, it shows a checked-square, otherwise it shows a square
 // header:  If set to true, it applies styles appropriated for headers 
 //          (top border radius, background color, no bottom border width)
@@ -13,12 +13,13 @@
 
 import React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import PropTypes from 'prop-types';
 import { Feather } from "@expo/vector-icons";
 
 import { Colors, Typography, Sizes } from "../styles";
 
 
-const FilterItem = ({ title, checked, header, last, onPress, onPressIcon}) => {
+const FilterItem = ({ label, checked, header, last, onPress, onPressIcon}) => {
 
   const containerExtraStyle = {
     backgroundColor: header ? Colors.HEADER : Colors.SURFACE,
@@ -34,7 +35,7 @@ const FilterItem = ({ title, checked, header, last, onPress, onPressIcon}) => {
     <TouchableOpacity onPress={onPress}>
       <View style={[styles.container, containerExtraStyle]}>
 
-        <Text style={textStyle}>{title}</Text>
+        <Text style={textStyle}>{label}</Text>
 
         <TouchableOpacity onPress={onPressIcon}>
           <Feather name={checked ? 'check-square' : 'square'} size={Sizes.ICON} />
@@ -45,8 +46,17 @@ const FilterItem = ({ title, checked, header, last, onPress, onPressIcon}) => {
   );
 }
 
+FilterItem.propTypes = {
+  label: PropTypes.string,
+  checked: PropTypes.bool,
+  header: PropTypes.bool,
+  last: PropTypes.bool,
+  onPress: PropTypes.func,
+  onPressIcon: PropTypes.func,
+}
+
 FilterItem.defaultProps = {
-  title: '',
+  label: '',
   checked: false,
   header: false,
   last: false,

@@ -6,19 +6,19 @@ import { Colors, Typography, Sizes  } from "../styles";
 import { screenWidth } from '../utils/scaling';
 
 
-const FilterButton = ({ title, onPress }) => {
+const FilterButton = ({ label, onPress }) => {
 
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.container}>
-        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.label}>{label}</Text>
       </View>
     </TouchableOpacity>
   );
 }
 
 FilterButton.defaultProps = {
-  title: '',
+  label: '',
   onPress: () => {},
 }
 
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.HEADER,
     width: (screenWidth - 4*Sizes.BASE_SPACING) / 3
   },
-  title: {
+  label: {
     ...Typography.BASE
   }
 });

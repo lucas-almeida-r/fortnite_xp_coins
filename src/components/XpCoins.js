@@ -9,22 +9,24 @@ import { screenWidth, shortDimension } from '../utils/scaling';
 
 
 const XpCoins = () => {
-  const { state: { coins, filters } } = useContext(MapContext);
+  const { state: { coins, coinsStatus, filters } } = useContext(MapContext);
 
+  
   const renderCoin = (item, index) => {
+    const status = coinsStatus.find( coin => coin.id === item.id).status;
     return(
-        filters[item.color] && filters[item.week] && filters[item.status]
-        ? (<TouchableOpacity 
-          style={[styles.container, { left: item.coords.left, top: item.coords.top }]} 
-          onPress={()=>console.log('normal')} 
-          key={item.id}
-          >
-            <Image 
-              style={styles.xpCoin}
-              source={require('../../assets/green.png')}
-            />
-          </TouchableOpacity>)
-        : null
+      filters[item.color] && filters[item.week] && filters[status]
+      ? (<TouchableOpacity 
+        style={[styles.container, { left: item.coords.left, top: item.coords.top }]} 
+        onPress={()=>console.log('normal')} 
+        key={item.id}
+        >
+          <Image 
+            style={styles.xpCoin}
+            source={require('../../assets/green.png')}
+          />
+        </TouchableOpacity>)
+      : null
     );
   };
   

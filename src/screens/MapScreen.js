@@ -12,9 +12,9 @@ const MapScreen = ({ navigation }) => {
     <SafeAreaView style={styles.screenContainer}>
       <Map/>
       <View style={styles.filtersContainer}>
-          <Filter />
-          <Filter />
-          <Filter />  
+          <Filter type='week'/>
+          <Filter type='color'/>
+          <Filter type='status'/>  
       </View>
     </SafeAreaView>
   );
