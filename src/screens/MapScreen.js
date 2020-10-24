@@ -5,16 +5,25 @@ import Filter from '../components/Filter';
 import { screenHeight, screenWidth } from '../utils/scaling';
 import { Sizes, Colors } from '../styles';
 import Map from '../components/Map';
+import ZoomButton from '../components/ZoomButton';
 
 const MapScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.screenContainer}>
       <Map/>
-      <View style={styles.filtersContainer}>
-          <Filter type='week'/>
-          <Filter type='color'/>
-          <Filter type='status'/>  
+      <View>
+        <View style={styles.zoomContainer}>
+          <ZoomButton icon='zoom-in' onPress={() => {}}/>
+        </View>
+        <View style={styles.zoomContainer}>
+          <ZoomButton icon='zoom-out' onPress={() => {}}/>
+        </View>
+        <View style={styles.filtersContainer}>
+            <Filter type='week'/>
+            <Filter type='color'/>
+            <Filter type='status'/>  
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -32,6 +41,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     padding: Sizes.BASE_SPACING,
   },
+  zoomContainer: {
+    alignSelf: 'flex-end',
+    marginTop: Sizes.BASE_SPACING,
+  }
 });
 
 export default MapScreen;

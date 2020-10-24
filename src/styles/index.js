@@ -43,8 +43,8 @@ export const Typography = {
 
 export const Sizes = {
   BASE_SPACING: moderateScale(10),
-  ICON: moderateScale(20),
   BORDER_RADIUS: moderateScale(5),
-  //BUTTON_HEIGHT: moderateScale(45),
+  ICON: moderateScale(30),
+  BUTTON: moderateScale(55),
 };
 
