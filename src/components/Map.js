@@ -13,6 +13,7 @@ const Map = () => {
     PanResponder.create({
       onMoveShouldSetPanResponder: () => true,
       onPanResponderGrant: () => {
+        //console.log('x ', pan.x._value, ' y ', pan.y._value);
         pan.setOffset({
           x: pan.x._value,
           y: pan.y._value
@@ -42,7 +43,7 @@ const Map = () => {
         resizeMode='contain'
         style={styles.map}
         source={require('../../assets/map.png')}
-      />
+        />
       <XpCoins/>
     </Animated.View>
   );
@@ -53,7 +54,7 @@ const Map = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: Colors.BACKGROUND,
   },
   map: {
     //flexGrow: 1,
