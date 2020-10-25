@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState } from 'react';
 import { Text, StyleSheet, Platform, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Filter from '../components/Filter';
@@ -8,16 +8,17 @@ import Map from '../components/Map';
 import RoundButton from '../components/RoundButton';
 
 const MapScreen = ({ navigation }) => {
+  const [zoomLevel, setZoomLevel] = useState(1);
 
   return (
     <SafeAreaView style={styles.screenContainer}>
-      <Map/>
+      <Map zoomLevel={zoomLevel}/>
       <View style={{ position: 'absolute', bottom: 10}}>
         <View style={styles.zoomContainer}>
-          <RoundButton icon='zoom-in' onPress={() => {}}/>
+          <RoundButton icon='zoom-in' onPress={() => setZoomLevel(2)}/>
         </View>
         <View style={styles.zoomContainer}>
-          <RoundButton icon='zoom-out' onPress={() => {}}/>
+          <RoundButton icon='zoom-out' onPress={() => setZoomLevel(1)}/>
         </View>
         <View style={styles.filtersContainer}>
             <Filter type='week'/>

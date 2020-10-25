@@ -6,7 +6,7 @@ import { screenWidth, shortDimension } from '../utils/scaling';
 import XpCoins from './XpCoins';
 
 
-const Map = () => {
+const Map = ({ zoomLevel }) => {
   const pan = useRef(new Animated.ValueXY({x: 0, y: 0})).current;
 
   const panResponder = useRef(
@@ -36,7 +36,7 @@ const Map = () => {
     <Animated.View
         style={[
           styles.container,
-          {transform: [{ translateX: pan.x }, { translateY: pan.y }]}
+          { transform: [{ translateX: pan.x }, { translateY: pan.y }, { scale: zoomLevel }] }
         ]}
         {...panResponder.panHandlers}
       >
@@ -54,15 +54,12 @@ const Map = () => {
 
 const styles = StyleSheet.create({
   container: {
-    width: 2*shortDimension,
-    height: 2*shortDimension,
-    backgroundColor: Colors.BACKGROUND,
     borderColor: 'red',
     borderWidth: 2,
   },
   map: {
-    width: 2*shortDimension,
-    height: 2*shortDimension,
+    width: shortDimension,
+    height: shortDimension,
   }
 });
 
