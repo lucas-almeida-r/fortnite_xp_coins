@@ -6,7 +6,7 @@ import { Colors, Typography, Sizes  } from "../styles";
 import { screenWidth } from '../utils/scaling';
 
 
-const ZoomButton = ({ icon, onPress }) => {
+const RoundButton = ({ icon, onPress }) => {
 
   return (
     <TouchableOpacity onPress={onPress}>
@@ -17,7 +17,7 @@ const ZoomButton = ({ icon, onPress }) => {
   );
 }
 
-ZoomButton.defaultProps = {
+RoundButton.defaultProps = {
   icon: 'zoom-in',
   onPress: () => {},
 }
@@ -34,4 +34,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ZoomButton;
+export default RoundButton;

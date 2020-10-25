@@ -35,6 +35,7 @@ const Map = () => {
   return (
     <Animated.View
         style={[
+          styles.container,
           {transform: [{ translateX: pan.x }, { translateY: pan.y }]}
         ]}
         {...panResponder.panHandlers}
@@ -53,13 +54,15 @@ const Map = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    width: 2*shortDimension,
+    height: 2*shortDimension,
     backgroundColor: Colors.BACKGROUND,
+    borderColor: 'red',
+    borderWidth: 2,
   },
   map: {
-    //flexGrow: 1,
-    width: shortDimension,
-    height: shortDimension,
+    width: 2*shortDimension,
+    height: 2*shortDimension,
   }
 });
 

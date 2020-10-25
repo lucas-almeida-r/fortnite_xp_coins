@@ -5,19 +5,19 @@ import Filter from '../components/Filter';
 import { screenHeight, screenWidth } from '../utils/scaling';
 import { Sizes, Colors } from '../styles';
 import Map from '../components/Map';
-import ZoomButton from '../components/ZoomButton';
+import RoundButton from '../components/RoundButton';
 
 const MapScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.screenContainer}>
       <Map/>
-      <View>
+      <View style={{ position: 'absolute', bottom: 10}}>
         <View style={styles.zoomContainer}>
-          <ZoomButton icon='zoom-in' onPress={() => {}}/>
+          <RoundButton icon='zoom-in' onPress={() => {}}/>
         </View>
         <View style={styles.zoomContainer}>
-          <ZoomButton icon='zoom-out' onPress={() => {}}/>
+          <RoundButton icon='zoom-out' onPress={() => {}}/>
         </View>
         <View style={styles.filtersContainer}>
             <Filter type='week'/>
