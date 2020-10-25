@@ -39,13 +39,15 @@ const Map = ({ zoomLevel }) => {
           { transform: [{ translateX: pan.x }, { translateY: pan.y }, { scale: zoomLevel }] }
         ]}
         {...panResponder.panHandlers}
-      >
-      <Image 
-        resizeMode='contain'
-        style={styles.map}
-        source={require('../../assets/map.png')}
-        />
-      <XpCoins/>
+    >
+      <View>
+        <Image 
+          resizeMode='contain'
+          style={styles.map}
+          source={require('../../assets/map.png')}
+          />
+        <XpCoins mapZoomLevel={zoomLevel}/>
+      </View>
     </Animated.View>
   );
 }
@@ -54,8 +56,10 @@ const Map = ({ zoomLevel }) => {
 
 const styles = StyleSheet.create({
   container: {
-    borderColor: 'red',
-    borderWidth: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+    //borderColor: 'red',
+    //borderWidth: 2,
   },
   map: {
     width: shortDimension,

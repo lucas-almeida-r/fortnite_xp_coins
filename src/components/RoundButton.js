@@ -27,8 +27,8 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-    width: Sizes.BUTTON,
-    height: Sizes.BUTTON,
+    width: Sizes.ROUND_BUTTON,
+    height: Sizes.ROUND_BUTTON,
     borderRadius: 100, // high value to fully round the sides of the button
     backgroundColor: Colors.HEADER,
   },

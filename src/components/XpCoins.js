@@ -7,7 +7,7 @@ import { Colors, Typography, Sizes  } from "../styles";
 import { screenWidth, shortDimension } from '../utils/scaling';
 
 
-const XpCoins = () => {
+const XpCoins = ({ mapZoomLevel }) => {
   const { state: { coins, coinsStatus, filters }, updateCoinStatus } = useContext(MapContext);
 
   const renderCoin = (coin, index) => {
@@ -22,7 +22,10 @@ const XpCoins = () => {
         key={coin.id}
         >
           <Image 
-            style={styles.xpCoin}
+            style={[
+              styles.xpCoin,
+              { width: Sizes.COIN / mapZoomLevel, height: Sizes.COIN / mapZoomLevel }
+             ]}
             source={require('../../assets/green.png')}
           />
         </TouchableOpacity>)
@@ -44,8 +47,6 @@ const styles = StyleSheet.create({
     
   },
   xpCoin: {
-    width: 50,
-    height: 50,
     borderColor: 'red',
     borderWidth: 1,
   }

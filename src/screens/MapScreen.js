@@ -13,7 +13,7 @@ const MapScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.screenContainer}>
       <Map zoomLevel={zoomLevel}/>
-      <View style={{ position: 'absolute', bottom: 10}}>
+      <View style={{ position: Platform.OS ==='web' ? 'relative' : 'absolute', bottom: 10}}>
         <View style={styles.zoomContainer}>
           <RoundButton icon='zoom-in' onPress={() => setZoomLevel(2)}/>
         </View>
