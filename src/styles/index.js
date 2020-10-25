@@ -1,6 +1,6 @@
 import { Platform } from 'react-native';
 
-import { moderateScale } from '../utils/scaling';
+import { moderateScale, shortDimension } from '../utils/scaling';
 
 //
 // COLORS
@@ -47,6 +47,8 @@ export const Sizes = {
   ICON_ROUND_BUTTON: moderateScale(30),
   ICON_FILTER_ITEM: moderateScale(20),
   ROUND_BUTTON: moderateScale(55),
-  COIN: moderateScale(50),
+  COIN_BASE_WIDTH: moderateScale(45),
+  COIN_BASE_HEIGHT: moderateScale(60), // aspect ratio w:h = 3:4
+  MAP_BASE_SIZE: shortDimension,
 };
 

@@ -62,8 +62,8 @@ const styles = StyleSheet.create({
     //borderWidth: 2,
   },
   map: {
-    width: shortDimension,
-    height: shortDimension,
+    width: Sizes.MAP_BASE_SIZE,
+    height: Sizes.MAP_BASE_SIZE,
   }
 });
 
