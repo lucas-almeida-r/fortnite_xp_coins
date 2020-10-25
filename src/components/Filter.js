@@ -38,7 +38,7 @@ const getFilterData = type => {
         { id: 'green', label: 'Verde' },
         { id: 'blue', label: 'Azul' },
         { id: 'purple', label: 'Roxa' },
-        { id: 'golden', label: 'Dourada' },
+        { id: 'gold', label: 'Dourada' },
       ];
     case 'status':
       return [

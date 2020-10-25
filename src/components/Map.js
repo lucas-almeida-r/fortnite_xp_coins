@@ -44,7 +44,7 @@ const Map = ({ zoomLevel }) => {
         <Image 
           resizeMode='contain'
           style={styles.map}
-          source={require('../../assets/map.png')}
+          source={require('../../assets/images/map.png')}
           />
         <XpCoins mapZoomLevel={zoomLevel}/>
       </View>

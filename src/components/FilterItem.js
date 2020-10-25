@@ -38,7 +38,7 @@ const FilterItem = ({ label, checked, header, last, onPress, onPressIcon}) => {
         <Text style={textStyle}>{label}</Text>
 
         <TouchableOpacity onPress={onPressIcon}>
-          <Feather name={checked ? 'check-square' : 'square'} size={Sizes.ICON} />
+          <Feather name={checked ? 'check-square' : 'square'} size={Sizes.ICON_FILTER_ITEM} />
         </TouchableOpacity>
 
       </View>

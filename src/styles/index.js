@@ -44,7 +44,8 @@ export const Typography = {
 export const Sizes = {
   BASE_SPACING: moderateScale(10),
   BORDER_RADIUS: moderateScale(5),
-  ICON: moderateScale(30),
+  ICON_ROUND_BUTTON: moderateScale(30),
+  ICON_FILTER_ITEM: moderateScale(20),
   ROUND_BUTTON: moderateScale(55),
   COIN: moderateScale(50),
 };

@@ -71,7 +71,7 @@ const mapContextInitialState = {
   coins: [
     { id: '1', coords: { top: 0, left: 0 }, color: 'blue', week: 'week2' }, 
     { id: '2', coords: { top: 100, left: 100 }, color: 'green', week: 'week5' }, 
-    { id: '3', coords: { top: 200, left: 200 }, color: 'golden', week: 'week1' },
+    { id: '3', coords: { top: 200, left: 200 }, color: 'gold', week: 'week1' },
   ],
   coinsStatus: [
     { id: '1', status: 'collected' }, 
@@ -93,7 +93,7 @@ const mapContextInitialState = {
     green: true,
     blue: true,
     purple: false,
-    golden: true,
+    gold: true,
 
     collected: true,
     notCollected: false,

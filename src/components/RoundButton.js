@@ -11,7 +11,7 @@ const RoundButton = ({ icon, onPress }) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.container}>
-        <Feather name={icon} size={Sizes.ICON}/>
+        <Feather name={icon} size={Sizes.ICON_ROUND_BUTTON}/>
       </View>
     </TouchableOpacity>
   );
