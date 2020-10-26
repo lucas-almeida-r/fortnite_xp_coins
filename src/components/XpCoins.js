@@ -31,7 +31,7 @@ const XpCoins = ({ mapZoomLevel }) => {
               styles.xpCoin,
               { width: Sizes.COIN_BASE_WIDTH / mapZoomLevel, height: Sizes.COIN_BASE_HEIGHT / mapZoomLevel }
              ]}
-            source={requireImage(`xp_coin_${coin.color}`)}
+            source={requireImage(`xp_coin_${coin.color}_${status}`)}
           />
         </TouchableOpacity>)
       : null

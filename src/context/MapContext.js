@@ -1,4 +1,5 @@
 import AsyncStorage from '@react-native-community/async-storage';
+import { useCallback } from 'react';
 import createDataContext from './createDataContext';
 
 // REDUCER
@@ -10,8 +11,13 @@ const mapReducer = (state, { type, payload }) => {
     case 'update_coin_status':
       return { ...state, coinsStatus: payload };
     
-    case 'get_cached_data':
-      return { ...state, filters: payload.filters, coinsStatus: payload.coinsStatus };
+    case 'get_coins_and_cached_data':
+      return { 
+        ...state, 
+        coins: payload.coins, 
+        filters: payload.filters, 
+        coinsStatus: payload.coinsStatus 
+      };
 
     default:
       return state;
@@ -28,8 +34,6 @@ const setFilters = (dispatch, state) => async (updatedFilters, newValue) => {
   updatedFilters.forEach( f => newFilters[f] = newValue);
   await AsyncStorage.setItem('filters', JSON.stringify(newFilters));
 
-  console.log(newFilters);
-  
   dispatch({ type: 'set_filters', payload: newFilters });
 };
 
@@ -47,7 +51,10 @@ const updateCoinStatus = (dispatch, state) => async (id, newStatus) => {
   dispatch({ type: 'update_coin_status', payload: newCoinsStatus });
 };
 
-const getCachedData = dispatch => async () => {
+
+const getCoinsAndCachedData = dispatch => async (callback) => {
+  const coins = require('../../assets/xp_coins.json');
+
   let filters = await AsyncStorage.getItem('filters');
   let coinsStatus = await AsyncStorage.getItem('coinsStatus');
 
@@ -56,52 +63,56 @@ const getCachedData = dispatch => async () => {
   if(!filters) filters = JSON.stringify(mapContextInitialState.filters);
   if(!coinsStatus) coinsStatus = JSON.stringify(mapContextInitialState.coinsStatus);
 
-  dispatch({ 
-    type: 'get_cached_data',
-    payload: {
-      filters: JSON.parse(filters),
-      coinsStatus: JSON.parse(coinsStatus),
-    }   
+  filters = JSON.parse(filters);
+  coinsStatus = JSON.parse(coinsStatus);
+
+  // if there are more coins than coinsStatus
+  coins.forEach(c => {
+    if(!coinsStatus.find(s => s.id === c.id)) {
+      coinsStatus.push({
+        id: c.id,
+        status: 'notCollected'
+      });
+    }
   });
 
+  dispatch({ 
+    type: 'get_coins_and_cached_data',
+    payload: { coins, filters, coinsStatus }   
+  });
+
+  callback();
 };
+
 
 // EXPORT
 const mapContextInitialState = { 
-  coins: [
-    { id: '1', coords: { top: 0, left: 0 }, color: 'blue', week: 'week2' }, 
-    { id: '2', coords: { top: 100, left: 100 }, color: 'green', week: 'week5' }, 
-    { id: '3', coords: { top: 200, left: 200 }, color: 'gold', week: 'week1' },
-  ],
-  coinsStatus: [
-    { id: '1', status: 'collected' }, 
-    { id: '2', status: 'notCollected' }, 
-    { id: '3', status: 'collected' },
-  ],
+  coins: [],
+  coinsStatus: [],
   filters: {
     week1: true,
     week2: true,
     week3: true,
     week4: true,
-    week5: false,
+    week5: true,
     week6: true,
     week7: true,
     week8: true,
     week9: true,
-    week10: false,
+    week10: true,
 
     green: true,
     blue: true,
-    purple: false,
+    purple: true,
     gold: true,
 
     collected: true,
-    notCollected: false,
+    notCollected: true,
   },
 };
 
 export const { Provider, Context } = createDataContext(
   mapReducer,
-  { setFilters, updateCoinStatus, getCachedData },
+  { setFilters, updateCoinStatus, getCoinsAndCachedData },
   mapContextInitialState
 );

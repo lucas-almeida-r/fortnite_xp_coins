@@ -7,12 +7,11 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const { getCachedData } = useContext(MapContext);
+  const { getCoinsAndCachedData, getCoinsData } = useContext(MapContext);
 
   useEffect(() => {
-    getCachedData();
+    getCoinsAndCachedData(() => setIsLoading(false));
     //AsyncStorage.clear();
-    setIsLoading(false);
   }, []);
 
   return isLoading ? <SplashScreen/> : <MapScreen/>
