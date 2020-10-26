@@ -13,12 +13,16 @@ const Map = ({ zoomLevel }) => {
     PanResponder.create({
       onMoveShouldSetPanResponder: () => true,
       onPanResponderGrant: () => {
-        //console.log('x ', pan.x._value, ' y ', pan.y._value);
+        console.log('GRRAAAAAANNNTT x ', pan.x._value, ' y ', pan.y._value);
         pan.setOffset({
           x: pan.x._value,
           y: pan.y._value
         });
+        pan.setValue({ x: 0, y: 0 }); // to prevent the "position x2" bug
       },
+      //onPanResponderMove: (event, gesture) => {
+      //  pan.setValue({ x: gesture.dx, y: gesture.dy });
+      //},
       onPanResponderMove: Animated.event(
         [
           null,
