@@ -15,6 +15,7 @@ import FilterItem from './FilterItem';
 import FilterButton from './FilterButton';
 import { shortDimension } from '../utils/scaling';
 import { Context as MapContext } from '../context/MapContext';
+import { MaterialCommunityIcons, Feather } from '@expo/vector-icons';
 
 import { Colors, Sizes } from '../styles';
 
@@ -59,18 +60,23 @@ const Filter = ({ type }) => {
   const filterData = getFilterData(type);
 
   let headerLabel;
+  let iconButton;
   switch (type) {
     case 'week':
       headerLabel = 'Semanas';
+      iconButton = <Feather name='calendar' size={20} />;
       break;
     case 'color':
       headerLabel = 'Cores';
+      iconButton = <MaterialCommunityIcons name='palette-outline' size={20} />;
       break;
     case 'status':
       headerLabel = 'Situação';
+      iconButton = <Feather name='check' size={20} />;
       break;
     default:
       headerLabel = '';
+      iconButton = null;
       break;
   }
   
@@ -101,10 +107,11 @@ const Filter = ({ type }) => {
   };
 
   return (
-    <View>
+    <View style={{ flex:1 }}>
       <FilterButton
         label={headerLabel}
         onPress={() => setVisibility(true)}
+        iconButton={iconButton}
       />
       <Modal
         visible={visibility}

@@ -13,7 +13,6 @@ const Map = ({ zoomLevel }) => {
     PanResponder.create({
       onMoveShouldSetPanResponder: () => true,
       onPanResponderGrant: () => {
-        console.log('GRRAAAAAANNNTT x ', pan.x._value, ' y ', pan.y._value);
         pan.setOffset({
           x: pan.x._value,
           y: pan.y._value

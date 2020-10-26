@@ -13,7 +13,7 @@ const MapScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.screenContainer}>
       <Map zoomLevel={zoomLevel}/>
-      <View style={{ position: Platform.OS ==='web' ? 'relative' : 'absolute', bottom: 10}}>
+      <View style={styles.allButtonsContainer}>
         <View style={styles.zoomContainer}>
           <RoundButton icon='zoom-in' onPress={() => setZoomLevel(2)}/>
         </View>
@@ -36,15 +36,28 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.BACKGROUND,
     flexDirection: 'column',
     justifyContent: 'space-between',
+    //borderColor: 'red',
+    //borderWidth: 1,
+  },
+  allButtonsContainer: {
+    position: Platform.OS ==='web' ? 'relative' : 'absolute',
+    bottom: 0, 
+    right: 0,
+    left: 0
   },
   filtersContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    padding: Sizes.BASE_SPACING,
+    paddingLeft: 10,
+    paddingTop: 10,
+    //borderColor: 'red',
+    //borderWidth: 1,
   },
   zoomContainer: {
     alignSelf: 'flex-end',
     marginTop: Sizes.BASE_SPACING,
+    marginRight: Sizes.BASE_SPACING,
+    //borderColor: 'red',
+    //borderWidth: 1,
   }
 });
 
