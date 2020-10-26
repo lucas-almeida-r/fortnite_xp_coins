@@ -64,15 +64,15 @@ const Filter = ({ type }) => {
   switch (type) {
     case 'week':
       headerLabel = 'Semanas';
-      iconButton = <Feather name='calendar' size={20} />;
+      iconButton = <Feather name='calendar' size={20} color={Colors.ON_HEADER}/>;
       break;
     case 'color':
       headerLabel = 'Cores';
-      iconButton = <MaterialCommunityIcons name='palette-outline' size={20} />;
+      iconButton = <MaterialCommunityIcons name='palette-outline' size={20} color={Colors.ON_HEADER}/>;
       break;
     case 'status':
       headerLabel = 'Situação';
-      iconButton = <Feather name='check' size={20} />;
+      iconButton = <Feather name='check' size={20} color={Colors.ON_HEADER}/>;
       break;
     default:
       headerLabel = '';
