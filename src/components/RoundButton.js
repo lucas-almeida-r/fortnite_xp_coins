@@ -30,7 +30,8 @@ const styles = StyleSheet.create({
     width: Sizes.ROUND_BUTTON,
     height: Sizes.ROUND_BUTTON,
     borderRadius: 100, // high value to fully round the sides of the button
-    backgroundColor: Colors.HEADER,
+    backgroundColor: Colors.BUTTON,
+    ...Sizes.SHADOW,
   },
 });
 

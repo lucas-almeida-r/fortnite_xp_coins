@@ -1,6 +1,6 @@
 //
 // the position (x,y) is the position of the pixel, 
-// where the coin is in an image 1016x1016. It is very easy to get this position
+// where the coin is in an image 1023x1023. It is very easy to get this position
 // and provide it to the app. However, to show the correct position on the screen
 // we need to convert this position (x,y) to a position (xApp, yApp), which
 // depends on the device
@@ -13,7 +13,7 @@ export const getInAppCoinPosition = (x, y, mapZoomLevel) => {
   
   const pxRatio = PixelRatio.get();
 
-  const mapSizePx = 1016;
+  const mapSizePx = 1023;
   
   // here we don't multiply by mapZoomLevel, because when we zoom-in
   // we do not set a new size for the map, we use a "transform scale = 2"

@@ -9,8 +9,10 @@ import { moderateScale, shortDimension } from '../utils/scaling';
 export const Colors = {
   SURFACE: '#fff',
   ON_SURFACE: '#000',
-  HEADER : '#67abeb',
-  ON_HEADER: '#000',
+  HEADER : '#0c71b5',
+  ON_HEADER: '#fff',
+  BUTTON : '#2a2a2a',
+  ON_BUTTON: '#fff',
   BORDER: '#ddd',
   MODAL_BACKGROUND: 'rgba(0, 0, 0, 0.75)',
   BACKGROUND: '#0c71b5',
@@ -25,14 +27,19 @@ export const Colors = {
 
 export const Typography = {
   HEADER: {
-    fontSize:  moderateScale(14),
+    fontSize:  moderateScale(20),
     color: Colors.ON_HEADER,
-    fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Helvetica',
+    fontFamily: 'LuckiestGuy_400Regular',
   },
-  BASE: {
+  BUTTON: {
     fontSize:  moderateScale(12),
+    color: Colors.ON_BUTTON,
+    fontFamily: 'LuckiestGuy_400Regular',
+  },
+  FILTER_ITEM: {
+    fontSize:  moderateScale(14),
     color: Colors.ON_SURFACE,
-    fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Helvetica',
+    fontFamily: 'LuckiestGuy_400Regular',
   },
   // SMALL: ... // not used yet
 };
@@ -50,5 +57,16 @@ export const Sizes = {
   COIN_BASE_WIDTH: moderateScale(45),
   COIN_BASE_HEIGHT: moderateScale(60), // aspect ratio w:h = 3:4
   MAP_BASE_SIZE: shortDimension,
+  SHADOW: {
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+
+    elevation: 3,
+  },
 };
 

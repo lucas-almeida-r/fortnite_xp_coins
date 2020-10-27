@@ -34,14 +34,15 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     padding: Sizes.BASE_SPACING,
     borderRadius: 100, // high value to fully round the sides of the button
-    backgroundColor: Colors.HEADER,
+    backgroundColor: Colors.BUTTON,
     marginBottom: Sizes.BASE_SPACING,
     marginRight: Sizes.BASE_SPACING,
     //borderColor: 'white',
     //borderWidth: 1,
+    ...Sizes.SHADOW,
   },
   label: {
-    ...Typography.BASE
+    ...Typography.BUTTON,
   },
   textContainer: {
     flex: 1,

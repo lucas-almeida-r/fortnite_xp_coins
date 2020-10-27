@@ -29,7 +29,8 @@ const FilterItem = ({ label, checked, header, last, onPress, onPressIcon}) => {
     borderBottomLeftRadius: last ? Sizes.BORDER_RADIUS : 0,
     borderBottomRightRadius: last ? Sizes.BORDER_RADIUS : 0,
   };
-  const textStyle = header ? Typography.HEADER : Typography.BASE;
+  const textStyle = header ? Typography.HEADER : Typography.FILTER_ITEM;
+  const iconColor = header ? Colors.ON_HEADER : Colors.ON_SURFACE;
 
   return (
     <TouchableOpacity onPress={onPress}>
@@ -38,7 +39,11 @@ const FilterItem = ({ label, checked, header, last, onPress, onPressIcon}) => {
         <Text style={textStyle}>{label}</Text>
 
         <TouchableOpacity onPress={onPressIcon}>
-          <Feather name={checked ? 'check-square' : 'square'} size={Sizes.ICON_FILTER_ITEM} />
+          <Feather 
+            name={checked ? 'check-square' : 'square'} 
+            size={Sizes.ICON_FILTER_ITEM} 
+            color={iconColor}
+          />
         </TouchableOpacity>
 
       </View>
