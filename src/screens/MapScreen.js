@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, StyleSheet, Platform, View, ScrollView } from 'react-native';
+import { Text, StyleSheet, Platform, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Filter from '../components/Filter';
 import { screenHeight, screenWidth } from '../utils/scaling';
@@ -20,13 +20,11 @@ const MapScreen = ({ navigation }) => {
         <View style={styles.zoomContainer}>
           <RoundButton icon='zoom-out' onPress={() => setZoomLevel(1)}/>
         </View>
-        <ScrollView>
         <View style={styles.filtersContainer}>
             <Filter type='week'/>
             <Filter type='color'/>
             <Filter type='status'/>  
         </View>
-        </ScrollView>
       </View>
     </SafeAreaView>
   );
@@ -49,8 +47,8 @@ const styles = StyleSheet.create({
   },
   filtersContainer: {
     flexDirection: 'row',
-    paddingLeft: 10,
-    paddingTop: 10,
+    paddingLeft: Sizes.BASE_SPACING,
+    paddingTop: Sizes.BASE_SPACING,
     //borderColor: 'red',
     //borderWidth: 1,
   },

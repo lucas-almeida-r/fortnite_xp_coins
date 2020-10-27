@@ -67,7 +67,7 @@ const Filter = ({ type }) => {
       iconButton = <Feather name='calendar' size={20} color={Colors.ON_HEADER}/>;
       break;
     case 'color':
-      headerLabel = ' Cores';
+      headerLabel = 'Cores';
       iconButton = <MaterialCommunityIcons name='palette-outline' size={20} color={Colors.ON_HEADER}/>;
       break;
     case 'status':
