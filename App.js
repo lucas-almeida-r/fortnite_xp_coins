@@ -8,7 +8,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 // disable warning from firebase sdk bug
 import { LogBox, Platform } from 'react-native';
-if(Platform.OS !== 'web') LogBox.ignoreLogs(['Setting a timer for a long']);
+if(Platform.OS === 'android') LogBox.ignoreLogs(['Setting a timer for a long']);
 
 const App = () => {
   const [initialDataLoaded, setInitialDataLoaded] = useState(false);
