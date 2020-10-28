@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-community/async-storage';
-import { Image } from "react-native";
+import { Image, Platform } from "react-native";
 import createDataContext from './createDataContext';
 import { storage } from '../firebase';
 
@@ -61,8 +61,11 @@ const getInitialData = dispatch => async (callback) => {
   let isOnline = false;
 
   try {
-    // xp coins
-    const coinsRef = storage.ref('xp_coins.json');
+    if (Platform.OS === 'web') {
+      // coins and map area always updated for the web
+      coins = require('../../assets/xp_coins.json');
+    } else {
+      const coinsRef = storage.ref('xp_coins.json');
     const coinsUrl = await coinsRef.getDownloadURL();
     coins = await fetch(coinsUrl);
     coins = await coins.json();
@@ -72,8 +75,9 @@ const getInitialData = dispatch => async (callback) => {
     const mapRef = storage.ref('map.png');
     mapUrl = await mapRef.getDownloadURL();
     await Image.prefetch(mapUrl);
-    
-    isOnline = true;
+  }
+  
+  isOnline = true;
 
   } catch (err) {
     coins = require('../../assets/xp_coins.json');

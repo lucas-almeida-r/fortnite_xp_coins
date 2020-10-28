@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     //borderWidth: 1,
   },
   allButtonsContainer: {
-    position: Platform.OS ==='web' ? 'relative' : 'absolute',
+    position: 'absolute',
     bottom: 0, 
     right: 0,
     left: 0
