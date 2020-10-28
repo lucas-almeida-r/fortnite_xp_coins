@@ -4,9 +4,13 @@
 // Code adapted from https://github.com/nirsky/react-native-size-matters
 //
 
-import { Dimensions } from 'react-native';
+import { Dimensions, Platform } from 'react-native';
 
-const { width, height } = Dimensions.get('window');
+// workaround for "very small shortDimension" bug
+const { width, height } = Platform.OS === 'ios' 
+                            ? Dimensions.get('screen') 
+                            : Dimensions.get('window');
+
 const [shortDimension, longDimension] = width < height ? [width, height] : [height, width];
 
 const screenWidth = width;
