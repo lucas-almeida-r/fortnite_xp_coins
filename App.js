@@ -7,8 +7,8 @@ import { useFonts, LuckiestGuy_400Regular  } from '@expo-google-fonts/luckiest-g
 import AsyncStorage from '@react-native-community/async-storage';
 
 // disable warning from firebase sdk bug
-import { LogBox } from 'react-native';
-LogBox.ignoreLogs(['Setting a timer for a long period of time, i.e. multiple minutes,']);
+import { LogBox, Platform } from 'react-native';
+if(Platform.OS !== 'web') LogBox.ignoreLogs(['Setting a timer for a long']);
 
 const App = () => {
   const [initialDataLoaded, setInitialDataLoaded] = useState(false);

@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "id": "1",
         "week": "week9",
         "color": "green",
         "coords": {
@@ -9,7 +9,7 @@
         }
     },
     {
-        "id": 2,
+        "id": "2",
         "week": "week9",
         "color": "green",
         "coords": {
@@ -18,7 +18,7 @@
         }
     },
     {
-        "id": 3,
+        "id": "3",
         "week": "week9",
         "color": "green",
         "coords": {
@@ -27,7 +27,7 @@
         }
     },
     {
-        "id": 4,
+        "id": "4",
         "week": "week9",
         "color": "green",
         "coords": {
@@ -36,7 +36,7 @@
         }
     },
     {
-        "id": 5,
+        "id": "5",
         "week": "week9",
         "color": "blue",
         "coords": {
@@ -45,7 +45,7 @@
         }
     },
     {
-        "id": 6,
+        "id": "6",
         "week": "week9",
         "color": "blue",
         "coords": {
@@ -54,7 +54,7 @@
         }
     },
     {
-        "id": 7,
+        "id": "7",
         "week": "week9",
         "color": "blue",
         "coords": {
@@ -63,7 +63,7 @@
         }
     },
     {
-        "id": 8,
+        "id": "8",
         "week": "week9",
         "color": "purple",
         "coords": {
@@ -72,7 +72,7 @@
         }
     },
     {
-        "id": 9,
+        "id": "9",
         "week": "week9",
         "color": "purple",
         "coords": {
@@ -81,7 +81,7 @@
         }
     },
     {
-        "id": 10,
+        "id": "10",
         "week": "week9",
         "color": "gold",
         "coords": {
@@ -90,7 +90,7 @@
         }
     },
     {
-        "id": 11,
+        "id": "11",
         "week": "week9",
         "color": "gold",
         "coords": {

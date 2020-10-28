@@ -83,15 +83,15 @@ const getInitialData = dispatch => async (callback) => {
   let filters = await AsyncStorage.getItem('filters');
   let coinsStatus = await AsyncStorage.getItem('coinsStatus');
 
-  // WARNING: this could erase all coinsStatus create by the user
-  //          the login + backup will solve the issue
+  // WARNING: if AsyncStorage fails when it was not suppose to, it will erase all 
+  //          coinsStatus create by the user. The login + backup will solve the issue
   if(!filters) filters = JSON.stringify(mapContextInitialState.filters);
   if(!coinsStatus) coinsStatus = JSON.stringify(mapContextInitialState.coinsStatus);
 
   filters = JSON.parse(filters);
   coinsStatus = JSON.parse(coinsStatus);
 
-  // if there are more coins than coinsStatus
+  // if there are missing coins id in coinsStatus, we create new entries in coinsStatus
   coins.forEach(c => {
     if(!coinsStatus.find(s => s.id === c.id)) {
       coinsStatus.push({
@@ -100,6 +100,12 @@ const getInitialData = dispatch => async (callback) => {
       });
     }
   });
+
+  // clean old entries of coinStatus
+  const oldestCoinId = Math.min(...coins.map(c => parseInt(c.id)));
+  if (oldestCoinId !== Infinity) {
+    coinsStatus = coinsStatus.filter(c => parseInt(c.id) >= oldestCoinId);
+  }
 
   dispatch({ 
     type: 'get_initial_data',
