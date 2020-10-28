@@ -13,7 +13,7 @@ const FilterButton = ({ label, onPress, iconButton }) => {
       <View style={styles.container}>
         {iconButton}
         <View style={styles.textContainer}>
-          <Text style={styles.label}>{label}</Text>
+          <Text numberOfLines={1} style={styles.label}>{label}</Text>
         </View>
       </View>
     </TouchableOpacity>
