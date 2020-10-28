@@ -55,9 +55,10 @@ const getFilterData = type => {
 
 const Filter = ({ type }) => {
   const [visibility, setVisibility] = useState(false);
-  const { state: { filters },  setFilters } = useContext(MapContext)
+  const { state: { filters, coins },  setFilters } = useContext(MapContext)
 
   const filterData = getFilterData(type);
+  const availableWeeks = coins.map(c => c.week);
 
   let headerLabel;
   let iconButton;
@@ -95,15 +96,15 @@ const Filter = ({ type }) => {
   
   const renderItem = ({ item, index }) => {
     const checked = filters[item.id];
-    return (
-      <FilterItem
-        label={item.label}
-        last={index === filterData.length-1}
-        checked={checked}
-        onPress={() => setFilters([item.id], !checked)}
-        onPressIcon={() => setFilters([item.id], !checked)}
-      />
-    );
+    return type === 'week' && !availableWeeks.includes(item.id)
+            ? null
+            : <FilterItem
+                label={item.label}
+                last={index === filterData.length-1}
+                checked={checked}
+                onPress={() => setFilters([item.id], !checked)}
+                onPressIcon={() => setFilters([item.id], !checked)}
+              />
   };
 
   return (
