@@ -1,6 +1,7 @@
 import AsyncStorage from '@react-native-community/async-storage';
-import { useCallback } from 'react';
+import { Image } from "react-native";
 import createDataContext from './createDataContext';
+import { storage } from '../firebase';
 
 // REDUCER
 const mapReducer = (state, { type, payload }) => {
@@ -11,12 +12,14 @@ const mapReducer = (state, { type, payload }) => {
     case 'update_coin_status':
       return { ...state, coinsStatus: payload };
     
-    case 'get_coins_and_cached_data':
+    case 'get_initial_data':
       return { 
-        ...state, 
-        coins: payload.coins, 
+        ...state,
+        coins: payload.coins,
         filters: payload.filters, 
-        coinsStatus: payload.coinsStatus 
+        coinsStatus: payload.coinsStatus,
+        mapUrl: payload.mapUrl,
+        isOnline: payload.isOnline,
       };
 
     default:
@@ -52,8 +55,30 @@ const updateCoinStatus = (dispatch, state) => async (id, newStatus) => {
 };
 
 
-const getCoinsAndCachedData = dispatch => async (callback) => {
-  const coins = require('../../assets/xp_coins.json');
+const getInitialData = dispatch => async (callback) => {
+  let coins;
+  let mapUrl = '';
+  let isOnline = false;
+
+  try {
+    // xp coins
+    const coinsRef = storage.ref('xp_coins.json');
+    const coinsUrl = await coinsRef.getDownloadURL();
+    coins = await fetch(coinsUrl);
+    coins = await coins.json();
+    //throw 'error';
+    
+    // map
+    const mapRef = storage.ref('map.png');
+    mapUrl = await mapRef.getDownloadURL();
+    await Image.prefetch(mapUrl);
+    
+    isOnline = true;
+
+  } catch (err) {
+    coins = require('../../assets/xp_coins.json');
+    isOnline = false;
+  }
 
   let filters = await AsyncStorage.getItem('filters');
   let coinsStatus = await AsyncStorage.getItem('coinsStatus');
@@ -77,8 +102,14 @@ const getCoinsAndCachedData = dispatch => async (callback) => {
   });
 
   dispatch({ 
-    type: 'get_coins_and_cached_data',
-    payload: { coins, filters, coinsStatus }   
+    type: 'get_initial_data',
+    payload: {
+      coins,
+      filters, 
+      coinsStatus,
+      mapUrl,
+      isOnline,
+    }   
   });
 
   callback();
@@ -86,7 +117,9 @@ const getCoinsAndCachedData = dispatch => async (callback) => {
 
 
 // EXPORT
-const mapContextInitialState = { 
+const mapContextInitialState = {
+  isOnline: false,
+  mapUrl: '',
   coins: [],
   coinsStatus: [],
   filters: {
@@ -113,6 +146,6 @@ const mapContextInitialState = {
 
 export const { Provider, Context } = createDataContext(
   mapReducer,
-  { setFilters, updateCoinStatus, getCoinsAndCachedData },
+  { setFilters, updateCoinStatus, getInitialData },
   mapContextInitialState
 );

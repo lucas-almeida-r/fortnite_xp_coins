@@ -6,7 +6,7 @@ import { screenWidth, shortDimension } from '../utils/scaling';
 import XpCoins from './XpCoins';
 
 
-const Map = ({ zoomLevel }) => {
+const Map = ({ zoomLevel, source }) => {
   const pan = useRef(new Animated.ValueXY({x: 0, y: 0})).current;
 
   const panResponder = useRef(
@@ -47,7 +47,7 @@ const Map = ({ zoomLevel }) => {
         <Image 
           resizeMode='contain'
           style={styles.map}
-          source={require('../../assets/images/map.png')}
+          source={source}
           />
         <XpCoins mapZoomLevel={zoomLevel}/>
       </View>

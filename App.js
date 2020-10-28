@@ -6,18 +6,22 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts, LuckiestGuy_400Regular  } from '@expo-google-fonts/luckiest-guy';
 import AsyncStorage from '@react-native-community/async-storage';
 
+// disable warning from firebase sdk bug
+import { LogBox } from 'react-native';
+LogBox.ignoreLogs(['Setting a timer for a long period of time, i.e. multiple minutes,']);
+
 const App = () => {
-  const [coinsAndCacheLoaded, setCoinsAndCacheLoaded] = useState(false);
-  const { getCoinsAndCachedData } = useContext(MapContext);
+  const [initialDataLoaded, setInitialDataLoaded] = useState(false);
+  const { getInitialData } = useContext(MapContext);
   let [fontsLoaded] = useFonts({ LuckiestGuy_400Regular });
   
 
   useEffect(() => {
-    getCoinsAndCachedData(() => setCoinsAndCacheLoaded(true));
+    getInitialData(() => setInitialDataLoaded(true));
     //AsyncStorage.clear();
   }, []);
 
-  return coinsAndCacheLoaded || fontsLoaded ? <MapScreen/> : <SplashScreen/>;
+  return initialDataLoaded && fontsLoaded ? <MapScreen/> : <SplashScreen/>;
 };
 
 export default () => {

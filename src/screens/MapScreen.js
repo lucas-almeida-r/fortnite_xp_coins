@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Text, StyleSheet, Platform, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Filter from '../components/Filter';
@@ -6,13 +6,18 @@ import { screenHeight, screenWidth } from '../utils/scaling';
 import { Sizes, Colors } from '../styles';
 import Map from '../components/Map';
 import RoundButton from '../components/RoundButton';
+import { Context as MapContext } from '../context/MapContext';
 
 const MapScreen = ({ navigation }) => {
   const [zoomLevel, setZoomLevel] = useState(1);
+  const { state: { mapUrl } } = useContext(MapContext);
 
   return (
     <SafeAreaView style={styles.screenContainer}>
-      <Map zoomLevel={zoomLevel}/>
+      <Map 
+        zoomLevel={zoomLevel}
+        source={mapUrl ? {uri: mapUrl} : require('../../assets/images/map.png')}
+      />
       <View style={styles.allButtonsContainer}>
         <View style={styles.zoomContainer}>
           <RoundButton icon='zoom-in' onPress={() => setZoomLevel(2)}/>
