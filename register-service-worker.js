@@ -1,0 +1,1 @@
+"serviceWorker"in navigator&&window.addEventListener("load",(function(){navigator.serviceWorker.register("/fortnite_xp_coins/expo-service-worker.js",{scope:"/fortnite_xp_coins/"}).then((function(e){})).catch((function(e){console.info("Failed to register service-worker",e)}))}));
