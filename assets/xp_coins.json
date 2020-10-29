@@ -97,5 +97,104 @@
             "left": 783,
             "top": 252
         }
+    },
+    {
+        "id": "12",
+        "week": "week10",
+        "color": "green",
+        "coords": {
+            "left": 297,
+            "top": 168
+        }
+    },
+    {
+        "id": "13",
+        "week": "week10",
+        "color": "green",
+        "coords": {
+            "left": 299,
+            "top": 387
+        }
+    },
+    {
+        "id": "14",
+        "week": "week10",
+        "color": "green",
+        "coords": {
+            "left": 657,
+            "top": 363
+        }
+    },
+    {
+        "id": "15",
+        "week": "week10",
+        "color": "green",
+        "coords": {
+            "left": 310,
+            "top": 659
+        }
+    },
+    {
+        "id": "16",
+        "week": "week10",
+        "color": "blue",
+        "coords": {
+            "left": 612,
+            "top": 587
+        }
+    },
+    {
+        "id": "17",
+        "week": "week10",
+        "color": "blue",
+        "coords": {
+            "left": 700,
+            "top": 659
+        }
+    },
+    {
+        "id": "18",
+        "week": "week10",
+        "color": "blue",
+        "coords": {
+            "left": 771,
+            "top": 990
+        }
+    },
+    {
+        "id": "19",
+        "week": "week10",
+        "color": "purple",
+        "coords": {
+            "left": 427,
+            "top": 736
+        }
+    },
+    {
+        "id": "20",
+        "week": "week10",
+        "color": "purple",
+        "coords": {
+            "left": 907,
+            "top": 604
+        }
+    },
+    {
+        "id": "21",
+        "week": "week10",
+        "color": "gold",
+        "coords": {
+            "left": 405,
+            "top": 302
+        }
+    },
+    {
+        "id": "22",
+        "week": "week10",
+        "color": "gold",
+        "coords": {
+            "left": 586,
+            "top": 668
+        }
     }
 ]
