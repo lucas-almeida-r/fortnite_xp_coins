@@ -1,13 +1,16 @@
+//
+// InfoButton is the button that wll show the Epic Games default disclaimer
+//
+
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, TouchableOpacity, Modal, TouchableWithoutFeedback } from 'react-native';
-import { Feather } from "@expo/vector-icons";
+import { Text, View, StyleSheet, Modal, TouchableWithoutFeedback } from 'react-native';
 
 import { Colors, Typography, Sizes  } from "../styles";
-import { screenWidth, shortDimension } from '../utils/scaling';
+import { shortDimension } from '../utils/scaling';
 import RoundButton from './RoundButton';
 
 
-const InfoButton = ({ icon, onPress }) => {
+const InfoButton = () => {
 const [visibility, setVisibility] = useState(false);
 
   return (

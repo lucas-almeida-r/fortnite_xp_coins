@@ -1,3 +1,7 @@
+//
+// This function return the appropriate "require(...)" given a name
+// We use it, because "require" does not allow template strings as argument
+//
 
 export const requireImage = (name) => {
   switch (name) {

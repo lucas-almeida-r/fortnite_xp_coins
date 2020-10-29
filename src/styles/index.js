@@ -1,4 +1,6 @@
-import { Platform } from 'react-native';
+//
+// This file exports all styles used in the app
+//
 
 import { moderateScale, shortDimension } from '../utils/scaling';
 
@@ -21,9 +23,6 @@ export const Colors = {
 //
 // TEXTS
 //
-// este link https://github.com/react-native-training/react-native-fonts contém as
-// fontes disponíveis no React-Native
-// este link (aberto em um IOS) https://iosfonts.com mostra comos são as fontes
 
 export const Typography = {
   HEADER: {

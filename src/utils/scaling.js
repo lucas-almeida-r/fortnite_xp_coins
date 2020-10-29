@@ -1,7 +1,7 @@
 //
-// Functions for scaling the size your apps UI across different sized devices.
+// This file exports useful functions for adapting the components for different screen sizes
 //
-// Code adapted from https://github.com/nirsky/react-native-size-matters
+// This code was adapted from https://github.com/nirsky/react-native-size-matters
 //
 
 import { Dimensions, Platform } from 'react-native';

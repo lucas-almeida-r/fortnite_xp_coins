@@ -1,3 +1,8 @@
+//
+// MapContext is the only Context of the app.
+// It has all data related to map, filters and xp coins.
+//
+
 import AsyncStorage from '@react-native-community/async-storage';
 import { Image, Platform } from "react-native";
 import createDataContext from './createDataContext';
@@ -40,7 +45,8 @@ const setFilters = (dispatch, state) => async (updatedFilters, newValue) => {
   dispatch({ type: 'set_filters', payload: newFilters });
 };
 
-// id: is the id of the coin to be updated
+
+// id: id (string) of the coin to be updated
 // newStatus: 'collected' or 'notCollected'
 const updateCoinStatus = (dispatch, state) => async (id, newStatus) => {
   let newCoinsStatus = [...state.coinsStatus];
@@ -55,6 +61,7 @@ const updateCoinStatus = (dispatch, state) => async (id, newStatus) => {
 };
 
 
+// callback: function called at the end of getInitialData
 const getInitialData = dispatch => async (callback) => {
   let coins;
   let mapUrl = '';
@@ -62,19 +69,18 @@ const getInitialData = dispatch => async (callback) => {
 
   try {
     if (Platform.OS === 'web') {
-      // coins and map area always updated for the web
+      // coins and map are always updated in the web version
       coins = require('../../assets/xp_coins.json');
     } else {
       const coinsRef = storage.ref('xp_coins.json');
-    const coinsUrl = await coinsRef.getDownloadURL();
-    coins = await fetch(coinsUrl);
-    coins = await coins.json();
-    //throw 'error';
-    
-    // map
-    const mapRef = storage.ref('map.jpg');
-    mapUrl = await mapRef.getDownloadURL();
-    await Image.prefetch(mapUrl);
+      const coinsUrl = await coinsRef.getDownloadURL();
+      coins = await fetch(coinsUrl);
+      coins = await coins.json();
+      //throw 'error';
+      
+      const mapRef = storage.ref('map.jpg');
+      mapUrl = await mapRef.getDownloadURL();
+      await Image.prefetch(mapUrl);
   }
   
   isOnline = true;

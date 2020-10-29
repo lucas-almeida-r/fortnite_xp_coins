@@ -1,9 +1,11 @@
 //
-// the position (x,y) is the position of the pixel, 
-// where the coin is in an image 1023x1023. It is very easy to get this position
-// and provide it to the app. However, to show the correct position on the screen
-// we need to convert this position (x,y) to a position (xApp, yApp), which
-// depends on the device
+// This function converts the coin position downloaded from the firebase storage
+// to the coin position used in the user's device.
+//
+// The downloaded position is determined from the pixel that locates the coin in
+// an image of size 1023x1023. However, the user's device won't show a image 1023x1023,
+// it will scale it. "getInAppCoinPostion" takes care of the conversion needed to
+// show the coin image in the appropriate position.
 // 
 
 import { PixelRatio } from 'react-native';

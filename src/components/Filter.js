@@ -1,7 +1,7 @@
 //
 // Filter is a button that when clicked shows a list of filters as a modal.
-// When the use click on a filter, it will dispatch the appropriate action funtion 
-// to activate it or deactivate it.
+// When the user clicks on a filter, it will dispatch the appropriate action funtion 
+// to activate or deactivate the filter.
 //
 // type: This string decides which list of filters to show. 
 //       It must be one of the following: 'week', 'color', 'status'

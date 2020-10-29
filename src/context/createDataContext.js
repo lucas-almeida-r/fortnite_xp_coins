@@ -1,3 +1,8 @@
+//
+// createDataContext is a useful function to create new contexts
+// in this app we have only one, so it is not very useful
+//
+
 import React, { useReducer } from 'react';
 
 export default (reducer, actions, initialState) => {

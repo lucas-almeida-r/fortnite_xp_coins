@@ -1,10 +1,16 @@
+//
+// XpCoins is used in Map to display all xp coins as clickable images
+//
+// mapZoomLevel: it is the zoom level used in Map. 
+//               It is used to reverse the scaling set in Map, so the xp coin images have a constant size
+//
+
 import React, { useContext } from 'react';
-import { Text, View, StyleSheet, Image, FlatList } from 'react-native';
+import { StyleSheet, Image } from 'react-native';
 import { TouchableOpacity } from "react-native";
 import { Context as MapContext } from "../context/MapContext";
 
-import { Colors, Typography, Sizes  } from "../styles";
-import { screenWidth, shortDimension } from '../utils/scaling';
+import { Sizes } from "../styles";
 
 import { requireImage } from '../utils/requireImage';
 import { getInAppCoinPosition } from '../utils/getInAppCoinPosition';
@@ -13,7 +19,7 @@ import { getInAppCoinPosition } from '../utils/getInAppCoinPosition';
 const XpCoins = ({ mapZoomLevel }) => {
   const { state: { coins, coinsStatus, filters }, updateCoinStatus } = useContext(MapContext);
 
-  const renderCoin = (coin, index) => {
+  const renderCoin = coin => {
     const status = coinsStatus.find(c => {return c.id === coin.id;}).status;
     const newStatusOnPress = status === 'collected' ? 'notCollected' : 'collected';
 
@@ -49,7 +55,6 @@ const styles = StyleSheet.create({
     //borderColor: 'red',
     //borderWidth: 1,
     zIndex: 1,
-    
   },
   xpCoin: {
     //borderColor: 'red',

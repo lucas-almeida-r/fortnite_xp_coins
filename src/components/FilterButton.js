@@ -1,9 +1,15 @@
+//
+// FilterButton is used in Filter. It is the button that 
+// makes the modal visible when clicked
+//
+// label:      It is the string displayed inside the button
+// onPress:    It is the function called when the button is clicked
+// iconButton: It is the icon show inside the button
+//
 
 import React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Colors, Typography, Sizes  } from "../styles";
-import { screenWidth } from '../utils/scaling';
-import { MaterialIcons} from '@expo/vector-icons';
 
 
 const FilterButton = ({ label, onPress, iconButton }) => {

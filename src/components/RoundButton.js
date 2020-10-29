@@ -1,9 +1,15 @@
+//
+// RoundButton is a circular button.
+//
+// icon:    It is the name (string) of a icon from Feather
+// onPress: It is the function called when the button is clicked
+//
+
 import React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Feather } from "@expo/vector-icons";
 
-import { Colors, Typography, Sizes  } from "../styles";
-import { screenWidth } from '../utils/scaling';
+import { Colors, Sizes  } from "../styles";
 
 
 const RoundButton = ({ icon, onPress }) => {

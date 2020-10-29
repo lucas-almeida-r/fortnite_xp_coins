@@ -1,7 +1,12 @@
+//
+// SplashScreen is just a screen showed, while the app is not yet 
+// ready to show MapScreen
+//
+
 import React from 'react';
-import { Text, Image, View, StyleSheet, ActivityIndicator } from 'react-native';
+import { StyleSheet, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Sizes, Colors, Typography } from '../styles';
+import { Colors } from '../styles';
 
 
 const SplashScreen = () => {

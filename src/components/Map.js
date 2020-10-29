@@ -1,8 +1,15 @@
-import React, { useRef } from 'react';
-import { Text, View, StyleSheet, Image, Dimensions, Animated, PanResponder } from 'react-native';
+//
+// Map is the draggable map shown in MapScreen. It includes the XP coins.
+//
+// zoomLevel: It is a number that scales the map and the xp coins
+// source:    It is the string that represents the source used for the image of the map.
+//            It may be an firebase url or a relative path
+//
 
-import { Colors, Typography, Sizes  } from "../styles";
-import { screenWidth, shortDimension } from '../utils/scaling';
+import React, { useRef } from 'react';
+import { View, StyleSheet, Image, Animated, PanResponder } from 'react-native';
+
+import { Sizes } from "../styles";
 import XpCoins from './XpCoins';
 
 
@@ -55,14 +62,13 @@ const Map = ({ zoomLevel, source }) => {
   );
 }
 
-    //</View>
 
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
     //borderColor: 'red',
-    //borderWidth: 2,
+    //borderWidth: 1,
   },
   map: {
     width: Sizes.MAP_BASE_SIZE,

@@ -1,15 +1,19 @@
+//
+// MapScreen is the screen that shows the map, filters and xp coins
+// It is the main screen of our app.
+//
+
 import React, { useState, useContext } from 'react';
 import { Text, StyleSheet, Platform, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Filter from '../components/Filter';
-import { screenHeight, screenWidth } from '../utils/scaling';
 import { Sizes, Colors, Typography } from '../styles';
 import Map from '../components/Map';
 import RoundButton from '../components/RoundButton';
 import InfoButton from '../components/InfoButton';
 import { Context as MapContext } from '../context/MapContext';
 
-const MapScreen = ({ navigation }) => {
+const MapScreen = () => {
   const [zoomLevel, setZoomLevel] = useState(1);
   const { state: { mapUrl, isOnline } } = useContext(MapContext);
 
