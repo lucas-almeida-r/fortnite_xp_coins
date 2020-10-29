@@ -5,7 +5,7 @@
   "lang": "en",
   "name": "Fortnite XP Coins",
   "short_name": "XpCoins",
-  "start_url": "/fortnite_xp_coins",
+  "start_url": "/fortnite_xp_coins/",
   "theme_color": "#0c71b5",
   "dir": "ltr",
   "orientation": "portrait",
