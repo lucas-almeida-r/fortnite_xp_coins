@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "XP Coins Fortnite",
-    "slug": "xp_coins_fortnite",
+    "name": "Fortnite XP Coins",
+    "slug": "fortnite_xp_coins",
     "privacy": "public",
     "version": "1.0.0",
     "orientation": "default",
@@ -22,7 +22,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png",
-      "name": "XP Coins Fortnite"
+      "name": "Fortnite XP Coins"
     },
     "androidStatusBar": {
       "barStyle": "light-content",
