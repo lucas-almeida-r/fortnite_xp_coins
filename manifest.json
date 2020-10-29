@@ -6,6 +6,7 @@
   "name": "Fortnite XP Coins",
   "short_name": "Fortnite XP Coins",
   "start_url": "/fortnite_xp_coins",
+  "theme_color": "#0c71b5",
   "icons": [
     {
       "src": "\\fortnite_xp_coins\\pwa\\chrome-icon\\chrome-icon-144.png",
