@@ -23,7 +23,7 @@
     "web": {
       "favicon": "./assets/favicon.png",
       "name": "Fortnite XP Coins",
-      "startUrl": "/fortnite_xp_coins",
+      "startUrl": "/fortnite_xp_coins/",
       "themeColor": "#0c71b5",
       "orientation": "portrait",
       "dir": "ltr",
