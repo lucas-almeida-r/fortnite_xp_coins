@@ -72,7 +72,7 @@ const getInitialData = dispatch => async (callback) => {
     //throw 'error';
     
     // map
-    const mapRef = storage.ref('map.png');
+    const mapRef = storage.ref('map.jpg');
     mapUrl = await mapRef.getDownloadURL();
     await Image.prefetch(mapUrl);
   }
