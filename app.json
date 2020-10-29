@@ -25,7 +25,8 @@
       "name": "Fortnite XP Coins",
       "startUrl": "/fortnite_xp_coins",
       "themeColor": "#0c71b5",
-      "orientation": "portrait"
+      "orientation": "portrait",
+      "scope": "."
     },
     "androidStatusBar": {
       "barStyle": "light-content",
