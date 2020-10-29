@@ -19,7 +19,7 @@ const MapScreen = () => {
 
   return (
     <SafeAreaView style={styles.screenContainer}>
-      <View style={{flex:1}}>
+      <View style={{ flex:1 }}>
         <Map 
           zoomLevel={zoomLevel}
           source={mapUrl ? {uri: mapUrl} : require('../../assets/images/map.png')}

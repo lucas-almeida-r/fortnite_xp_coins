@@ -17,6 +17,7 @@ const App = () => {
   
 
   useEffect(() => {
+    if(Platform.OS === 'web') document.body.style = "position:fixed!important";
     getInitialData(() => setInitialDataLoaded(true));
     //AsyncStorage.clear();
   }, []);
