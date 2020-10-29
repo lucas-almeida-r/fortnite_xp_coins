@@ -26,9 +26,9 @@
       "startUrl": "/fortnite_xp_coins",
       "themeColor": "#0c71b5",
       "orientation": "portrait",
-      "scope": ".",
       "dir": "ltr",
-      "display": "standalone"
+      "display": "standalone",
+      "shortName": "XpCoins"
     },
     "androidStatusBar": {
       "barStyle": "light-content",
