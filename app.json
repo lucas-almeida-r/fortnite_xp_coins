@@ -24,8 +24,7 @@
       "favicon": "./assets/favicon.png",
       "name": "Fortnite XP Coins",
       "startUrl": "/fortnite_xp_coins",
-      "barStyle": "black",
-      "lang": ""
+      "themeColor": "#0c71b5"
     },
     "androidStatusBar": {
       "barStyle": "light-content",
