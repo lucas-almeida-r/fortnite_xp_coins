@@ -132,7 +132,7 @@ self.__precacheManifest = [
     "url": "/fortnite_xp_coins/favicon.ico"
   },
   {
-    "revision": "80e103e7acdf8d717de335ab5d9f0c7a",
+    "revision": "ea549ee03bfe774f9f55f65dfb943fee",
     "url": "/fortnite_xp_coins/manifest.json"
   }
 ];
