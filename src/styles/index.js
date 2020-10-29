@@ -40,6 +40,7 @@ export const Typography = {
     fontSize:  moderateScale(14),
     color: Colors.ON_SURFACE,
     fontFamily: 'LuckiestGuy_400Regular',
+    lineHeight: moderateScale(21),
   },
   // SMALL: ... // not used yet
 };

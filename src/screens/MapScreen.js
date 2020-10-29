@@ -6,6 +6,7 @@ import { screenHeight, screenWidth } from '../utils/scaling';
 import { Sizes, Colors, Typography } from '../styles';
 import Map from '../components/Map';
 import RoundButton from '../components/RoundButton';
+import InfoButton from '../components/InfoButton';
 import { Context as MapContext } from '../context/MapContext';
 
 const MapScreen = ({ navigation }) => {
@@ -14,31 +15,36 @@ const MapScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.screenContainer}>
-      <Map 
-        zoomLevel={zoomLevel}
-        source={mapUrl ? {uri: mapUrl} : require('../../assets/images/map.png')}
-      />
-      <View style={styles.allButtonsContainer}>
-        <View style={styles.zoomContainer}>
-          <RoundButton icon='zoom-in' onPress={() => setZoomLevel(2)}/>
+      <View style={{flex:1}}>
+        <Map 
+          zoomLevel={zoomLevel}
+          source={mapUrl ? {uri: mapUrl} : require('../../assets/images/map.png')}
+        />
+        <View style={styles.infoContainer}>
+          <InfoButton />
         </View>
-        <View style={styles.offlineZoomContainer}>
-          { isOnline 
-            ? null 
-            : <View style={styles.offlineContainer}>
-                <Text style={styles.offlineTextStyle}>
-                  {'Offline: mapa e moedas podem estar desatualizados.'}
-                </Text>
-              </View>
-          }
+        <View style={styles.bottomButtonsContainer}>
           <View style={styles.zoomContainer}>
-            <RoundButton icon='zoom-out' onPress={() => setZoomLevel(1)}/>
+            <RoundButton icon='zoom-in' onPress={() => setZoomLevel(2)}/>
           </View>
-        </View>
-        <View style={styles.filtersContainer}>
-            <Filter type='week'/>
-            <Filter type='color'/>
-            <Filter type='status'/>  
+          <View style={styles.offlineZoomContainer}>
+            { isOnline 
+              ? null 
+              : <View style={styles.offlineContainer}>
+                  <Text style={styles.offlineTextStyle}>
+                    {'Offline: mapa e moedas podem estar desatualizados.'}
+                  </Text>
+                </View>
+            }
+            <View style={styles.zoomContainer}>
+              <RoundButton icon='zoom-out' onPress={() => setZoomLevel(1)}/>
+            </View>
+          </View>
+          <View style={styles.filtersContainer}>
+              <Filter type='week'/>
+              <Filter type='color'/>
+              <Filter type='status'/>  
+          </View>
         </View>
       </View>
     </SafeAreaView>
@@ -54,11 +60,17 @@ const styles = StyleSheet.create({
     //borderColor: 'red',
     //borderWidth: 1,
   },
-  allButtonsContainer: {
+  bottomButtonsContainer: {
     position: 'absolute',
     bottom: 0, 
     right: 0,
     left: 0
+  },
+  infoContainer: {
+    position: 'absolute',
+    top: Sizes.BASE_SPACING,
+    right: Sizes.BASE_SPACING,
+    zIndex: 1,
   },
   filtersContainer: {
     flexDirection: 'row',
@@ -89,7 +101,8 @@ const styles = StyleSheet.create({
     marginRight: Sizes.BASE_SPACING,
     //borderColor: 'green',
     //borderWidth: 1,
-  }
+  },
+  
 });
 
 export default MapScreen;
