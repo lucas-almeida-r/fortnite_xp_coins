@@ -1,6 +1,6 @@
 {
   "main": "node_modules/expo/AppEntry.js",
-  "homepage": "http://lucas-almeida-r.github.io/fortnite_xp_coins",
+  "homepage": "https://lucas-almeida-r.github.io/fortnite_xp_coins",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
