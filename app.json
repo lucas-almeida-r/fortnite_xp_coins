@@ -26,7 +26,7 @@
       "startUrl": "/fortnite_xp_coins",
       "themeColor": "#0c71b5",
       "orientation": "portrait",
-      "scope": "https://lucas-almeida-r.github.io/fortnite_xp_coins",
+      "scope": ".",
       "dir": "ltr",
       "display": "standalone"
     },
