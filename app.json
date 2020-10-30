@@ -27,13 +27,14 @@
       "themeColor": "#0c71b5",
       "orientation": "portrait",
       "dir": "ltr",
-      "display": "standalone"
+      "display": "standalone",
+      "description": "Keep track of the XP coins you've already collected!"
     },
     "androidStatusBar": {
       "barStyle": "light-content",
       "backgroundColor": "#0c71b5"
     },
-    "description": "This app helps you to keep track of the XP coins you've already collected in Fortnite. Use it to catch them all!",
+    "description": "I've created this app to help my friends and I collect all XP coins in Fortnite, feel free to use it (I'm not affiliated with Epic Games).",
     "platforms" : ["ios", "android", "web"],
     "githubUrl": "https://github.com/lucas-almeida-r/fortnite_xp_coins"
   }
