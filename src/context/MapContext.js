@@ -25,6 +25,7 @@ const mapReducer = (state, { type, payload }) => {
         coinsStatus: payload.coinsStatus,
         mapUrl: payload.mapUrl,
         isOnline: payload.isOnline,
+        language: payload.language,
       };
     
     case 'change_language':
@@ -99,11 +100,13 @@ const getInitialData = dispatch => async (callback) => {
 
   let filters = await AsyncStorage.getItem('filters');
   let coinsStatus = await AsyncStorage.getItem('coinsStatus');
+  let language = await AsyncStorage.getItem('language');
 
   // WARNING: if AsyncStorage fails when it was not suppose to, it will erase all 
   //          coinsStatus create by the user. The login + backup will solve the issue
   if(!filters) filters = JSON.stringify(mapContextInitialState.filters);
   if(!coinsStatus) coinsStatus = JSON.stringify(mapContextInitialState.coinsStatus);
+  if(!language) language = mapContextInitialState.language;
 
   filters = JSON.parse(filters);
   coinsStatus = JSON.parse(coinsStatus);
@@ -132,16 +135,31 @@ const getInitialData = dispatch => async (callback) => {
       coinsStatus,
       mapUrl,
       isOnline,
+      language,
     }   
   });
 
   callback();
 };
 
-const changeLanguage = (dispatch, state) => () => {
+
+const changeLanguage = (dispatch, state) => async () => {
   let newLanguage = 'pt';
   if (state.language === 'pt') newLanguage = 'en';
+  await AsyncStorage.setItem('language', newLanguage);
+
   dispatch({ type: 'change_language', payload: newLanguage });
+};
+
+
+// filters: array of filters to be updated
+// newValue: true or false
+const aaasetFilters = (dispatch, state) => async (updatedFilters, newValue) => {
+  let newFilters = { ...state.filters };
+  updatedFilters.forEach( f => newFilters[f] = newValue);
+  await AsyncStorage.setItem('filters', JSON.stringify(newFilters));
+
+  dispatch({ type: 'set_filters', payload: newFilters });
 };
 
 
