@@ -90,6 +90,7 @@ const Filter = ({ type }) => {
             header
             checked={!newFilterValue}
             label={headerLabel}
+            onPress={() => setFilters(filtersToUpdate, newFilterValue)}
             onPressIcon={() => setFilters(filtersToUpdate, newFilterValue)}
           />;
   };
