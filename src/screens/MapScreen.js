@@ -52,7 +52,7 @@ const MapScreen = () => {
           <View style={styles.filtersContainer}>
               <Filter type='week'/>
               <Filter type='color'/>
-              <Filter type='status'/>  
+              <Filter type='status'/>
           </View>
       </View>
     </SafeAreaView>

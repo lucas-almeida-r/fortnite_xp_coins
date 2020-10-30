@@ -15,7 +15,7 @@ import { Colors, Typography, Sizes  } from "../styles";
 const FilterButton = ({ label, onPress, iconButton }) => {
 
   return (
-    <TouchableOpacity onPress={onPress} style={{ borderRadius: 100 }}>
+    <TouchableOpacity onPress={onPress} style={styles.touchable}>
       <View style={styles.container}>
         {iconButton}
         <View style={styles.textContainer}>
@@ -34,6 +34,11 @@ FilterButton.defaultProps = {
 
 
 const styles = StyleSheet.create({
+  touchable: {
+    borderRadius: 100,
+    marginBottom: Sizes.BASE_SPACING,
+    marginRight: Sizes.BASE_SPACING,
+  },
   container: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -41,8 +46,6 @@ const styles = StyleSheet.create({
     padding: Sizes.BASE_SPACING,
     borderRadius: 100, // high value to fully round the sides of the button
     backgroundColor: Colors.BUTTON,
-    marginBottom: Sizes.BASE_SPACING,
-    marginRight: Sizes.BASE_SPACING,
     //borderColor: 'white',
     //borderWidth: 1,
     ...Sizes.SHADOW,
