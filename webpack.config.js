@@ -6,6 +6,7 @@ module.exports = async function (env, argv) {
       ...env,
       // Passing true will enable the default Workbox + Expo SW configuration.
       offline: true,
+      https: true
     },
     argv
   );
