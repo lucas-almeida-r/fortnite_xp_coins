@@ -18,8 +18,8 @@ const MapScreen = () => {
   const { state: { mapUrl, isOnline } } = useContext(MapContext);
 
   return (
-    <SafeAreaView style={styles.screenContainer}>
-      <View style={{ flex:1 }}>
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={styles.screenContainer}>
         <Map 
           zoomLevel={zoomLevel}
           source={mapUrl ? {uri: mapUrl} : require('../../assets/images/map.png')}
@@ -61,25 +61,30 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.BACKGROUND,
     flexDirection: 'column',
     justifyContent: 'space-between',
-    //borderColor: 'red',
-    //borderWidth: 1,
+    borderColor: 'red',
+    borderWidth: 1,
   },
   bottomButtonsContainer: {
     position: 'absolute',
     bottom: 0, 
     right: 0,
-    left: 0
+    left: 0,
+    //borderColor: 'green',
+    //borderWidth: 1,
   },
   infoContainer: {
     position: 'absolute',
     top: Sizes.BASE_SPACING,
     right: Sizes.BASE_SPACING,
-    zIndex: 1,
+    zIndex: 2, // Map has zIndex === 1
+    borderColor: 'red',
+    borderWidth: 1,
   },
   filtersContainer: {
     flexDirection: 'row',
     paddingLeft: Sizes.BASE_SPACING,
     paddingTop: Sizes.BASE_SPACING,
+    zIndex: 10,
     //borderColor: 'red',
     //borderWidth: 1,
   },
@@ -87,11 +92,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingLeft: Sizes.BASE_SPACING,
     justifyContent: 'flex-end',
-    //borderColor: 'red',
+    //borderColor: 'white',
     //borderWidth: 1,
   },
   offlineContainer: {
-    flex:1,
+    flex: 1,
     alignSelf: 'flex-end',
     //borderColor: 'white',
     //borderWidth: 1,
@@ -103,8 +108,9 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
     marginTop: Sizes.BASE_SPACING,
     marginRight: Sizes.BASE_SPACING,
-    //borderColor: 'green',
-    //borderWidth: 1,
+    borderColor: 'green',
+    borderWidth: 1,
+    zIndex: 2,
   },
   
 });

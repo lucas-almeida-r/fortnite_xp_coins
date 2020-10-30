@@ -1,15 +1,22 @@
 const createExpoWebpackConfigAsync = require("@expo/webpack-config");
 
 module.exports = async function (env, argv) {
+  const preConfig = await createExpoWebpackConfigAsync(env, argv);
+
+  let https = true;
+  if (preConfig.mode === 'development') {
+    https = false;
+  }
+
   const config = await createExpoWebpackConfigAsync(
     {
       ...env,
-      // Passing true will enable the default Workbox + Expo SW configuration.
       offline: true,
-      https: true
+      https: https
     },
     argv
   );
+
   // Customize the config before returning it.
   return config;
 };
