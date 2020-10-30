@@ -67,7 +67,7 @@ const updateCoinStatus = (dispatch, state) => async (id, newStatus) => {
 // callback: function called at the end of getInitialData
 const getInitialData = dispatch => async (callback) => {
   let coins;
-  let mapUrl = '';
+  let mapUrl = { pt: '', en: '' };
   let isOnline = false;
 
   try {
@@ -80,10 +80,14 @@ const getInitialData = dispatch => async (callback) => {
       coins = await fetch(coinsUrl);
       coins = await coins.json();
       //throw 'error';
-      
-      const mapRef = storage.ref('map.jpg');
-      mapUrl = await mapRef.getDownloadURL();
-      await Image.prefetch(mapUrl);
+
+      const mapRefPt = storage.ref('map_pt.jpg');
+      mapUrl.pt = await mapRefPt.getDownloadURL();
+      await Image.prefetch(mapUrl.pt);
+
+      const mapRefEn = storage.ref('map_en.jpg');
+      mapUrl.en = await mapRefEn.getDownloadURL();
+      await Image.prefetch(mapUrl.en);
   }
   
   isOnline = true;
@@ -145,7 +149,10 @@ const changeLanguage = (dispatch, state) => () => {
 const mapContextInitialState = {
   language: 'pt',
   isOnline: false,
-  mapUrl: '',
+  mapUrl: {
+    pt: '',
+    en: ''
+  },
   coins: [],
   coinsStatus: [],
   filters: {

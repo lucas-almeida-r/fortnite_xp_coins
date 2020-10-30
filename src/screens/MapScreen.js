@@ -13,6 +13,7 @@ import RoundButton from '../components/RoundButton';
 import InfoButton from '../components/InfoButton';
 import { Context as MapContext } from '../context/MapContext';
 import strings from '../strings';
+import { requireImage } from '../utils/requireImage';
 
 const MapScreen = () => {
   const [zoomLevel, setZoomLevel] = useState(1);
@@ -23,13 +24,16 @@ const MapScreen = () => {
       <View style={styles.screenContainer}>
         <Map 
           zoomLevel={zoomLevel}
-          source={mapUrl ? {uri: mapUrl} : require('../../assets/images/map.png')}
+          source={mapUrl[language] ? { uri: mapUrl[language] } : requireImage(`map_${language}`)}
         />
         <View style={styles.infoContainer}>
           <InfoButton />
         </View>
         <View style={styles.languageContainer}>
-          <RoundButton icon='zoom-in' onPress={() => changeLanguage()}/>
+          <RoundButton 
+            imageSource={requireImage(`language_icon_${language}`)} 
+            onPress={() => changeLanguage()}
+          />
         </View>
         <View style={styles.zoomContainer}>
           <RoundButton icon='zoom-in' onPress={() => setZoomLevel(2)}/>

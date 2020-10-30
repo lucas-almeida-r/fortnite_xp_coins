@@ -5,6 +5,14 @@
 
 export const requireImage = (name) => {
   switch (name) {
+    case 'language_icon_pt':
+      return require('../../assets/images/language_icon_pt.png');
+    case 'language_icon_en':
+      return require('../../assets/images/language_icon_en.png');
+    case 'map_pt':
+      return require('../../assets/images/map_pt.jpg');
+    case 'map_en':
+      return require('../../assets/images/map_en.jpg');
     case 'xp_coin_green_notCollected':
       return require('../../assets/images/xp_coin_green_notCollected.png');
     case 'xp_coin_blue_notCollected':

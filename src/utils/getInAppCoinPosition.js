@@ -3,7 +3,7 @@
 // to the coin position used in the user's device.
 //
 // The downloaded position is determined from the pixel that locates the coin in
-// an image of size 1023x1023. However, the user's device won't show a image 1023x1023,
+// an image of size 1024x1024. However, the user's device won't show a image 1023x1023,
 // it will scale it. "getInAppCoinPostion" takes care of the conversion needed to
 // show the coin image in the appropriate position.
 // 
@@ -15,7 +15,7 @@ export const getInAppCoinPosition = (x, y, mapZoomLevel) => {
   
   const pxRatio = PixelRatio.get();
 
-  const mapSizePx = 1023;
+  const mapSizePx = 1024;
   
   // here we don't multiply by mapZoomLevel, because when we zoom-in
   // we do not set a new size for the map, we use a "transform scale = 2"

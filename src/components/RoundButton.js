@@ -7,21 +7,21 @@
 //
 
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { Feather } from "@expo/vector-icons";
 
 import { Colors, Sizes  } from "../styles";
 
 
-const RoundButton = ({ icon, onPress }) => {
+const RoundButton = ({ icon, imageSource, onPress }) => {
 
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.container}>
         {
-          typeof(icon) === 'string'
+          icon
             ? <Feather name={icon} size={Sizes.ICON_ROUND_BUTTON} color={Colors.ON_HEADER}/>
-            : icon
+            : <Image source={imageSource} style={styles.image}/>
         }
         
       </View>
@@ -30,7 +30,8 @@ const RoundButton = ({ icon, onPress }) => {
 }
 
 RoundButton.defaultProps = {
-  icon: 'zoom-in',
+  icon: '',
+  imageSource: '',
   onPress: () => {},
 }
 
@@ -44,6 +45,10 @@ const styles = StyleSheet.create({
     borderRadius: 100, // high value to fully round the sides of the button
     backgroundColor: Colors.BUTTON,
     ...Sizes.SHADOW,
+  },
+  image: {
+    width: Sizes.ICON_ROUND_BUTTON,
+    height: Sizes.ICON_ROUND_BUTTON,
   },
 });
 
