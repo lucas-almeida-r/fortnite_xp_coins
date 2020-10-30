@@ -28,7 +28,24 @@
       "orientation": "portrait",
       "dir": "ltr",
       "display": "standalone",
-      "shortName": "XpCoins"
+      "shortName": "XpCoins",
+      "icons": [
+        {
+          "src": "/fortnite_xp_coins/pwa/chrome-icon/chrome-icon-144.png",
+          "sizes": "144x144",
+          "type": "image/png"
+        },
+        {
+          "src": "/fortnite_xp_coins/pwa/chrome-icon/chrome-icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        },
+        {
+          "src": "/fortnite_xp_coins/pwa/chrome-icon/chrome-icon-512.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+      ]
     },
     "androidStatusBar": {
       "barStyle": "light-content",
