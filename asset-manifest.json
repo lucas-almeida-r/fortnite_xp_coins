@@ -1,11 +1,11 @@
 {
   "files": {
-    "app.js": "/fortnite_xp_coins/static/js/app.d2472881.chunk.js",
-    "app.js.map": "/fortnite_xp_coins/static/js/app.d2472881.chunk.js.map",
+    "app.js": "/fortnite_xp_coins/static/js/app.fb92a150.chunk.js",
+    "app.js.map": "/fortnite_xp_coins/static/js/app.fb92a150.chunk.js.map",
     "runtime~app.js": "/fortnite_xp_coins/static/js/runtime~app.667b5d8a.js",
     "runtime~app.js.map": "/fortnite_xp_coins/static/js/runtime~app.667b5d8a.js.map",
-    "static/js/2.4bbb22e5.chunk.js": "/fortnite_xp_coins/static/js/2.4bbb22e5.chunk.js",
-    "static/js/2.4bbb22e5.chunk.js.map": "/fortnite_xp_coins/static/js/2.4bbb22e5.chunk.js.map",
+    "static/js/2.2c99a0c7.chunk.js": "/fortnite_xp_coins/static/js/2.2c99a0c7.chunk.js",
+    "static/js/2.2c99a0c7.chunk.js.map": "/fortnite_xp_coins/static/js/2.2c99a0c7.chunk.js.map",
     "fonts/AntDesign.ttf": "/fortnite_xp_coins/./fonts/AntDesign.ttf",
     "fonts/Entypo.ttf": "/fortnite_xp_coins/./fonts/Entypo.ttf",
     "fonts/Feather.ttf": "/fortnite_xp_coins/./fonts/Feather.ttf",
@@ -25,7 +25,7 @@
     "index.html": "/fortnite_xp_coins/index.html",
     "manifest.json": "/fortnite_xp_coins/manifest.json",
     "serve.json": "/fortnite_xp_coins/serve.json",
-    "static/js/2.4bbb22e5.chunk.js.LICENSE.txt": "/fortnite_xp_coins/static/js/2.4bbb22e5.chunk.js.LICENSE.txt",
+    "static/js/2.2c99a0c7.chunk.js.LICENSE.txt": "/fortnite_xp_coins/static/js/2.2c99a0c7.chunk.js.LICENSE.txt",
     "static/media/map.png": "/fortnite_xp_coins/static/media/map.3655df58.png",
     "static/media/xp_coin_blue_collected.png": "/fortnite_xp_coins/static/media/xp_coin_blue_collected.8bb0a00a.png",
     "static/media/xp_coin_blue_notCollected.png": "/fortnite_xp_coins/static/media/xp_coin_blue_notCollected.a027f0cc.png",
@@ -38,7 +38,7 @@
   },
   "entrypoints": [
     "static/js/runtime~app.667b5d8a.js",
-    "static/js/2.4bbb22e5.chunk.js",
-    "static/js/app.d2472881.chunk.js"
+    "static/js/2.2c99a0c7.chunk.js",
+    "static/js/app.fb92a150.chunk.js"
   ]
 }
