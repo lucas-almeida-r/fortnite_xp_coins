@@ -26,6 +26,9 @@ const mapReducer = (state, { type, payload }) => {
         mapUrl: payload.mapUrl,
         isOnline: payload.isOnline,
       };
+    
+    case 'change_language':
+      return { ...state, language: payload };
 
     default:
       return state;
@@ -131,9 +134,16 @@ const getInitialData = dispatch => async (callback) => {
   callback();
 };
 
+const changeLanguage = (dispatch, state) => () => {
+  let newLanguage = 'pt';
+  if (state.language === 'pt') newLanguage = 'en';
+  dispatch({ type: 'change_language', payload: newLanguage });
+};
+
 
 // EXPORT
 const mapContextInitialState = {
+  language: 'pt',
   isOnline: false,
   mapUrl: '',
   coins: [],
@@ -162,6 +172,6 @@ const mapContextInitialState = {
 
 export const { Provider, Context } = createDataContext(
   mapReducer,
-  { setFilters, updateCoinStatus, getInitialData },
+  { setFilters, updateCoinStatus, getInitialData, changeLanguage },
   mapContextInitialState
 );

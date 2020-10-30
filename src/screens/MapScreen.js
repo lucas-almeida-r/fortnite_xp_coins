@@ -15,7 +15,7 @@ import { Context as MapContext } from '../context/MapContext';
 
 const MapScreen = () => {
   const [zoomLevel, setZoomLevel] = useState(1);
-  const { state: { mapUrl, isOnline } } = useContext(MapContext);
+  const { state: { mapUrl, isOnline }, changeLanguage } = useContext(MapContext);
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -26,6 +26,9 @@ const MapScreen = () => {
         />
         <View style={styles.infoContainer}>
           <InfoButton />
+        </View>
+        <View style={styles.languageContainer}>
+          <RoundButton icon='zoom-in' onPress={() => changeLanguage()}/>
         </View>
         <View style={styles.zoomContainer}>
           <RoundButton icon='zoom-in' onPress={() => setZoomLevel(2)}/>
@@ -72,6 +75,13 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: Sizes.BASE_SPACING,
     right: Sizes.BASE_SPACING,
+    //borderColor: 'red',
+    //borderWidth: 1,
+  },
+  languageContainer: {
+    position: 'absolute',
+    top: Sizes.BASE_SPACING,
+    left: Sizes.BASE_SPACING,
     //borderColor: 'red',
     //borderWidth: 1,
   },
