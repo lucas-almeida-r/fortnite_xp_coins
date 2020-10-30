@@ -16,35 +16,37 @@ import FilterButton from './FilterButton';
 import { shortDimension } from '../utils/scaling';
 import { Context as MapContext } from '../context/MapContext';
 import { MaterialCommunityIcons, Feather } from '@expo/vector-icons';
+import strings from '../strings';
 
 import { Colors, Sizes } from '../styles';
 
-const getFilterData = type => {
+const getFilterData = (type, language) => {
+  const strLang = strings[language];
   switch (type) {
     case 'week':
       return [
-        { id: 'week1', label: 'Semana 1' },
-        { id: 'week2', label: 'Semana 2' },
-        { id: 'week3', label: 'Semana 3' },
-        { id: 'week4', label: 'Semana 4' },
-        { id: 'week5', label: 'Semana 5' },
-        { id: 'week6', label: 'Semana 6' },
-        { id: 'week7', label: 'Semana 7' },
-        { id: 'week8', label: 'Semana 8' },
-        { id: 'week9', label: 'Semana 9' },
-        { id: 'week10', label: 'Semana 10' },
+        { id: 'week1', label: strLang.week1 },
+        { id: 'week2', label: strLang.week2  },
+        { id: 'week3', label: strLang.week3  },
+        { id: 'week4', label: strLang.week4  },
+        { id: 'week5', label: strLang.week5  },
+        { id: 'week6', label: strLang.week6  },
+        { id: 'week7', label: strLang.week7  },
+        { id: 'week8', label: strLang.week8  },
+        { id: 'week9', label: strLang.week9  },
+        { id: 'week10', label: strLang.week10  },
       ];
     case 'color':
       return [
-        { id: 'green', label: 'Verde' },
-        { id: 'blue', label: 'Azul' },
-        { id: 'purple', label: 'Roxa' },
-        { id: 'gold', label: 'Dourada' },
+        { id: 'green', label: strLang.green },
+        { id: 'blue', label: strLang.blue },
+        { id: 'purple', label: strLang.purple },
+        { id: 'gold', label: strLang.gold },
       ];
     case 'status':
       return [
-        { id: 'collected', label: 'Coletada'},
-        { id: 'notCollected', label: 'Não Coletada'},
+        { id: 'collected', label: strLang.collected },
+        { id: 'notCollected', label: strLang.notCollected },
       ];
     default:
       return [];
@@ -52,27 +54,26 @@ const getFilterData = type => {
 };
 
 
-
 const Filter = ({ type }) => {
   const [visibility, setVisibility] = useState(false);
-  const { state: { filters, coins },  setFilters } = useContext(MapContext)
+  const { state: { filters, coins, language },  setFilters } = useContext(MapContext)
 
-  const filterData = getFilterData(type);
+  const filterData = getFilterData(type, language);
   const availableWeeks = coins.map(c => c.week);
 
   let headerLabel;
   let iconButton;
   switch (type) {
     case 'week':
-      headerLabel = 'Semanas';
+      headerLabel = strings[language].weeks;
       iconButton = <Feather name='calendar' size={20} color={Colors.ON_HEADER}/>;
       break;
     case 'color':
-      headerLabel = 'Cores';
+      headerLabel = strings[language].colors;
       iconButton = <MaterialCommunityIcons name='palette-outline' size={20} color={Colors.ON_HEADER}/>;
       break;
     case 'status':
-      headerLabel = 'Status';
+      headerLabel = strings[language].status;
       iconButton = <Feather name='check' size={20} color={Colors.ON_HEADER}/>;
       break;
     default:

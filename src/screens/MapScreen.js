@@ -12,10 +12,11 @@ import Map from '../components/Map';
 import RoundButton from '../components/RoundButton';
 import InfoButton from '../components/InfoButton';
 import { Context as MapContext } from '../context/MapContext';
+import strings from '../strings';
 
 const MapScreen = () => {
   const [zoomLevel, setZoomLevel] = useState(1);
-  const { state: { mapUrl, isOnline }, changeLanguage } = useContext(MapContext);
+  const { state: { mapUrl, isOnline, language }, changeLanguage } = useContext(MapContext);
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -40,7 +41,7 @@ const MapScreen = () => {
             ? null 
             : <View style={styles.offlineContainer}>
                 <Text style={styles.offlineTextStyle}>
-                  {'Offline: mapa e moedas podem estar desatualizados.'}
+                  {strings[language].offline}
                 </Text>
               </View>
           }

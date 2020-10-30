@@ -2,16 +2,19 @@
 // InfoButton is the button that wll show the Epic Games default disclaimer
 //
 
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Text, View, StyleSheet, Modal, TouchableWithoutFeedback } from 'react-native';
 
 import { Colors, Typography, Sizes  } from "../styles";
 import { shortDimension } from '../utils/scaling';
 import RoundButton from './RoundButton';
+import strings from '../strings';
+import { Context as MapContext } from '../context/MapContext';
 
 
 const InfoButton = () => {
 const [visibility, setVisibility] = useState(false);
+const { state: { language } } = useContext(MapContext);
 
   return (
     <View style={{ flex:1 }}>
@@ -29,7 +32,7 @@ const [visibility, setVisibility] = useState(false);
           <View style={styles.modalContainer}>
             <View style={styles.modalSurface}>
             <Text style={styles.text}>
-              Partes dos materiais utilizados são marcas comerciais e/ou obras com direitos autorais da Epic Games, Inc. Todos os direitos reservados pela Epic. Este material não é oficial e não é endossado pela Epic.
+              {strings[language].disclaimer}
             </Text>
             </View>
           </View>
