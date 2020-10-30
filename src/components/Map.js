@@ -10,6 +10,7 @@ import React, { useRef } from 'react';
 import { View, StyleSheet, Image, Animated, PanResponder } from 'react-native';
 
 import { Sizes } from "../styles";
+import { screenWidth, shortDimension, orientation } from '../utils/scaling';
 import XpCoins from './XpCoins';
 
 
@@ -67,6 +68,9 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
+    position: 'absolute',
+    top: 0,
+    left: orientation === 'landscape' ? (screenWidth - shortDimension)/2 : 0,
     //borderColor: 'red',
     //borderWidth: 1,
   },

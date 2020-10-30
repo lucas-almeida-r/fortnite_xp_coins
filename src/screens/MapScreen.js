@@ -4,7 +4,7 @@
 //
 
 import React, { useState, useContext } from 'react';
-import { Text, StyleSheet, Platform, View } from 'react-native';
+import { Text, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Filter from '../components/Filter';
 import { Sizes, Colors, Typography } from '../styles';
@@ -27,29 +27,25 @@ const MapScreen = () => {
         <View style={styles.infoContainer}>
           <InfoButton />
         </View>
-        <View style={styles.bottomButtonsContainer}>
-          <View style={styles.zoomContainer}>
-            <RoundButton icon='zoom-in' onPress={() => setZoomLevel(2)}/>
-          </View>
-          <View style={styles.offlineZoomContainer}>
-            { isOnline 
-              ? null 
-              : <View style={styles.offlineContainer}>
-                  <Text style={styles.offlineTextStyle}>
-                    {'Offline: mapa e moedas podem estar desatualizados.'}
-                  </Text>
-                </View>
-            }
-            <View style={styles.zoomContainer}>
-              <RoundButton icon='zoom-out' onPress={() => setZoomLevel(1)}/>
-            </View>
-          </View>
+        <View style={styles.zoomContainer}>
+          <RoundButton icon='zoom-in' onPress={() => setZoomLevel(2)}/>
+        </View>
+        <View style={styles.zoomContainer}>
+          <RoundButton icon='zoom-out' onPress={() => setZoomLevel(1)}/>
+        </View>
+        { isOnline 
+            ? null 
+            : <View style={styles.offlineContainer}>
+                <Text style={styles.offlineTextStyle}>
+                  {'Offline: mapa e moedas podem estar desatualizados.'}
+                </Text>
+              </View>
+          }
           <View style={styles.filtersContainer}>
               <Filter type='week'/>
               <Filter type='color'/>
               <Filter type='status'/>  
           </View>
-        </View>
       </View>
     </SafeAreaView>
   );
@@ -60,9 +56,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.BACKGROUND,
     flexDirection: 'column',
-    justifyContent: 'space-between',
-    borderColor: 'red',
-    borderWidth: 1,
+    justifyContent: 'flex-end',
+    //borderColor: 'red',
+    //borderWidth: 1,
   },
   bottomButtonsContainer: {
     position: 'absolute',
@@ -76,28 +72,20 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: Sizes.BASE_SPACING,
     right: Sizes.BASE_SPACING,
-    zIndex: 2, // Map has zIndex === 1
-    borderColor: 'red',
-    borderWidth: 1,
-  },
-  filtersContainer: {
-    flexDirection: 'row',
-    paddingLeft: Sizes.BASE_SPACING,
-    paddingTop: Sizes.BASE_SPACING,
-    zIndex: 10,
     //borderColor: 'red',
     //borderWidth: 1,
   },
-  offlineZoomContainer: {
+  filtersContainer: {
     flexDirection: 'row',
-    paddingLeft: Sizes.BASE_SPACING,
-    justifyContent: 'flex-end',
-    //borderColor: 'white',
+    marginLeft: Sizes.BASE_SPACING,
+    marginTop: Sizes.BASE_SPACING,
+    //borderColor: 'red',
     //borderWidth: 1,
   },
   offlineContainer: {
-    flex: 1,
-    alignSelf: 'flex-end',
+    marginLeft: Sizes.BASE_SPACING,
+    marginTop: Sizes.BASE_SPACING,
+    alignSelf: 'flex-start',
     //borderColor: 'white',
     //borderWidth: 1,
   },
@@ -108,9 +96,8 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
     marginTop: Sizes.BASE_SPACING,
     marginRight: Sizes.BASE_SPACING,
-    borderColor: 'green',
-    borderWidth: 1,
-    zIndex: 2,
+    //borderColor: 'green',
+    //borderWidth: 1,
   },
   
 });

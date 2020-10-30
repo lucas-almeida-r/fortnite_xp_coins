@@ -13,6 +13,8 @@ const { width, height } = Platform.OS === 'ios'
 
 const [shortDimension, longDimension] = width < height ? [width, height] : [height, width];
 
+const orientation = width < height ? 'portrait' : 'landscape';
+
 const screenWidth = width;
 const screenHeight = height;
 
@@ -26,4 +28,4 @@ const moderateScale = (size, factor = 0.2) => size + (scale(size) - size) * fact
 const moderateVerticalScale = (size, factor = 0.2) => size + (verticalScale(size) - size) * factor;
 
 export { scale, verticalScale, moderateScale, moderateVerticalScale, 
-  screenWidth, screenHeight, shortDimension, longDimension};
+  screenWidth, screenHeight, shortDimension, longDimension, orientation };
