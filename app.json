@@ -19,7 +19,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "backgroundColor": "#0c71b5"
     },
     "web": {
       "favicon": "./assets/favicon.png",
@@ -29,7 +30,9 @@
       "orientation": "portrait",
       "dir": "ltr",
       "display": "standalone",
-      "description": "Keep track of the XP coins you've already collected!"
+      "description": "Keep track of the XP coins you've already collected!",
+      "barStyle": "light-content",
+      "backgroundColor": "#0c71b5"
     },
     "androidStatusBar": {
       "barStyle": "light-content",

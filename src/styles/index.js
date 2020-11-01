@@ -41,7 +41,6 @@ export const Typography = {
     fontFamily: 'LuckiestGuy_400Regular',
     lineHeight: moderateScale(21),
   },
-  // SMALL: ... // not used yet
 };
 
 //

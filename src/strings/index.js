@@ -49,7 +49,7 @@ export default  {
     collected: 'collected',
     notCollected: 'not collected',
 
-    disclaimer: 'Portions of the materials used are trademarks and/or copyrighted works of Epic Games, Inc. All rights reserved by Epic. This material is not official and is not endorsed by Epic',
+    disclaimer: 'Portions of the materials used are trademarks and/or copyrighted works of Epic Games, Inc. All rights reserved by Epic. This material is not official and is not endorsed by Epic.',
 
     offline: 'Offline: Maps and XP coins may be outdated.',
   },

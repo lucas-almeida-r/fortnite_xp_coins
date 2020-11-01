@@ -17,7 +17,7 @@ const App = () => {
   
 
   useEffect(() => {
-    if(Platform.OS === 'web') document.body.style = "position:fixed!important";
+    if(Platform.OS === 'web') document.body.style.overflow = "hidden";
     getInitialData(() => setInitialDataLoaded(true));
     //AsyncStorage.clear();
   }, []);
