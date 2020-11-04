@@ -1,11 +1,11 @@
 {
   "files": {
-    "app.js": "/fortnite_xp_coins/static/js/app.1aebe844.chunk.js",
-    "app.js.map": "/fortnite_xp_coins/static/js/app.1aebe844.chunk.js.map",
+    "app.js": "/fortnite_xp_coins/static/js/app.f20a28e1.chunk.js",
+    "app.js.map": "/fortnite_xp_coins/static/js/app.f20a28e1.chunk.js.map",
     "runtime~app.js": "/fortnite_xp_coins/static/js/runtime~app.667b5d8a.js",
     "runtime~app.js.map": "/fortnite_xp_coins/static/js/runtime~app.667b5d8a.js.map",
-    "static/js/2.9db18614.chunk.js": "/fortnite_xp_coins/static/js/2.9db18614.chunk.js",
-    "static/js/2.9db18614.chunk.js.map": "/fortnite_xp_coins/static/js/2.9db18614.chunk.js.map",
+    "static/js/2.780d0a9e.chunk.js": "/fortnite_xp_coins/static/js/2.780d0a9e.chunk.js",
+    "static/js/2.780d0a9e.chunk.js.map": "/fortnite_xp_coins/static/js/2.780d0a9e.chunk.js.map",
     "fonts/AntDesign.ttf": "/fortnite_xp_coins/./fonts/AntDesign.ttf",
     "fonts/Entypo.ttf": "/fortnite_xp_coins/./fonts/Entypo.ttf",
     "fonts/Feather.ttf": "/fortnite_xp_coins/./fonts/Feather.ttf",
@@ -25,7 +25,7 @@
     "index.html": "/fortnite_xp_coins/index.html",
     "manifest.json": "/fortnite_xp_coins/manifest.json",
     "serve.json": "/fortnite_xp_coins/serve.json",
-    "static/js/2.9db18614.chunk.js.LICENSE.txt": "/fortnite_xp_coins/static/js/2.9db18614.chunk.js.LICENSE.txt",
+    "static/js/2.780d0a9e.chunk.js.LICENSE.txt": "/fortnite_xp_coins/static/js/2.780d0a9e.chunk.js.LICENSE.txt",
     "static/media/language_icon_en.png": "/fortnite_xp_coins/static/media/language_icon_en.1b70ea61.png",
     "static/media/language_icon_pt.png": "/fortnite_xp_coins/static/media/language_icon_pt.e793e29e.png",
     "static/media/map_en.jpg": "/fortnite_xp_coins/static/media/map_en.5d7e1bc6.jpg",
@@ -41,7 +41,7 @@
   },
   "entrypoints": [
     "static/js/runtime~app.667b5d8a.js",
-    "static/js/2.9db18614.chunk.js",
-    "static/js/app.1aebe844.chunk.js"
+    "static/js/2.780d0a9e.chunk.js",
+    "static/js/app.f20a28e1.chunk.js"
   ]
 }
