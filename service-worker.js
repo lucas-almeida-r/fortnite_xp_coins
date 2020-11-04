@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/fortnite_xp_coins/precache-manifest.5af3c1bf340211bf503b3f6bcb88b6af.js"
+  "/fortnite_xp_coins/precache-manifest.f1f3530812b95b8712822adf623a0b32.js"
 );
 
 workbox.skipWaiting();
