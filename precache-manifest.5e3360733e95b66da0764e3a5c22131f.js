@@ -112,7 +112,7 @@ self.__precacheManifest = [
     "url": "/fortnite_xp_coins/./fonts/SimpleLineIcons.ttf"
   },
   {
-    "revision": "5b25da7b868b3ccfb1f13be89330e4c7",
+    "revision": "d962a211c75dc7462f3435cb2281257b",
     "url": "/fortnite_xp_coins/index.html"
   },
   {
