@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "d365cfd2b6456292b952",
-    "url": "/fortnite_xp_coins/static/js/app.505af9dc.chunk.js"
+    "revision": "a69df23d1a34708cced2",
+    "url": "/fortnite_xp_coins/static/js/app.03b10fcd.chunk.js"
   },
   {
     "revision": "aa3f822c94c97dc946e9",
@@ -112,11 +112,11 @@ self.__precacheManifest = [
     "url": "/fortnite_xp_coins/./fonts/SimpleLineIcons.ttf"
   },
   {
-    "revision": "d962a211c75dc7462f3435cb2281257b",
+    "revision": "3c3c4909620c949182b937361eb4d3fe",
     "url": "/fortnite_xp_coins/index.html"
   },
   {
-    "revision": "c4c6580e29e39ad2b4b2ff0e7d094949",
+    "revision": "222fd317eb4057f1bed9d22674bd166a",
     "url": "/fortnite_xp_coins/manifest.json"
   },
   {
