@@ -1,7 +1,7 @@
 {
   "files": {
-    "app.js": "/fortnite_xp_coins/static/js/app.f20a28e1.chunk.js",
-    "app.js.map": "/fortnite_xp_coins/static/js/app.f20a28e1.chunk.js.map",
+    "app.js": "/fortnite_xp_coins/static/js/app.505af9dc.chunk.js",
+    "app.js.map": "/fortnite_xp_coins/static/js/app.505af9dc.chunk.js.map",
     "runtime~app.js": "/fortnite_xp_coins/static/js/runtime~app.667b5d8a.js",
     "runtime~app.js.map": "/fortnite_xp_coins/static/js/runtime~app.667b5d8a.js.map",
     "static/js/2.780d0a9e.chunk.js": "/fortnite_xp_coins/static/js/2.780d0a9e.chunk.js",
@@ -22,6 +22,7 @@
     "favicon-16.png": "/fortnite_xp_coins/favicon-16.png",
     "favicon-32.png": "/fortnite_xp_coins/favicon-32.png",
     "favicon.ico": "/fortnite_xp_coins/favicon.ico",
+    "fortnite_xp_coins/manifest.json": "/fortnite_xp_coins/fortnite_xp_coins/manifest.json",
     "index.html": "/fortnite_xp_coins/index.html",
     "manifest.json": "/fortnite_xp_coins/manifest.json",
     "serve.json": "/fortnite_xp_coins/serve.json",
@@ -42,6 +43,6 @@
   "entrypoints": [
     "static/js/runtime~app.667b5d8a.js",
     "static/js/2.780d0a9e.chunk.js",
-    "static/js/app.f20a28e1.chunk.js"
+    "static/js/app.505af9dc.chunk.js"
   ]
 }
