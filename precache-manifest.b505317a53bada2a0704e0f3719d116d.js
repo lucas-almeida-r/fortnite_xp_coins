@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "54b6e461b3d4d1618bf2",
-    "url": "/fortnite_xp_coins/static/js/app.1f84d2ea.chunk.js"
+    "revision": "d365cfd2b6456292b952",
+    "url": "/fortnite_xp_coins/static/js/app.505af9dc.chunk.js"
   },
   {
     "revision": "aa3f822c94c97dc946e9",
@@ -112,12 +112,12 @@ self.__precacheManifest = [
     "url": "/fortnite_xp_coins/./fonts/SimpleLineIcons.ttf"
   },
   {
-    "revision": "5bc510791c666111d76a79be3928e3bd",
+    "revision": "91ff36c60764914e8ee096934df7f81f",
     "url": "/fortnite_xp_coins/index.html"
   },
   {
-    "revision": "f8b4d10a367b95e6c83357a2e2506931",
-    "url": "/fortnite_xp_coins/fortnite_xp_coins/manifest.json"
+    "revision": "c4c6580e29e39ad2b4b2ff0e7d094949",
+    "url": "/fortnite_xp_coins/manifest.json"
   },
   {
     "revision": "ec543248d7b23864564429fc03837190",
@@ -146,9 +146,5 @@ self.__precacheManifest = [
   {
     "revision": "af316166d7727c135acbeafbc2f5048b",
     "url": "/fortnite_xp_coins/favicon.ico"
-  },
-  {
-    "revision": "c4c6580e29e39ad2b4b2ff0e7d094949",
-    "url": "/fortnite_xp_coins/manifest.json"
   }
 ];
