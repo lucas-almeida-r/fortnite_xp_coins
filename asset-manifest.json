@@ -1,7 +1,7 @@
 {
   "files": {
-    "app.js": "/fortnite_xp_coins/static/js/app.9578a092.chunk.js",
-    "app.js.map": "/fortnite_xp_coins/static/js/app.9578a092.chunk.js.map",
+    "app.js": "/fortnite_xp_coins/static/js/app.505af9dc.chunk.js",
+    "app.js.map": "/fortnite_xp_coins/static/js/app.505af9dc.chunk.js.map",
     "runtime~app.js": "/fortnite_xp_coins/static/js/runtime~app.667b5d8a.js",
     "runtime~app.js.map": "/fortnite_xp_coins/static/js/runtime~app.667b5d8a.js.map",
     "static/js/2.780d0a9e.chunk.js": "/fortnite_xp_coins/static/js/2.780d0a9e.chunk.js",
@@ -42,6 +42,6 @@
   "entrypoints": [
     "static/js/runtime~app.667b5d8a.js",
     "static/js/2.780d0a9e.chunk.js",
-    "static/js/app.9578a092.chunk.js"
+    "static/js/app.505af9dc.chunk.js"
   ]
 }
