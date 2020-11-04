@@ -116,7 +116,7 @@ self.__precacheManifest = [
     "url": "/fortnite_xp_coins/index.html"
   },
   {
-    "revision": "222fd317eb4057f1bed9d22674bd166a",
+    "revision": "f8b4d10a367b95e6c83357a2e2506931",
     "url": "/fortnite_xp_coins/fortnite_xp_coins/manifest.json"
   },
   {
